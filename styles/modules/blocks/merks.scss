@@ -1,0 +1,39 @@
+.merks {
+  @include flex($align: flex-start, $justify: space-between);
+  gap: 80px;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  // max-width: 1320px;
+  
+  &__container {
+    @include flex($align: flex-start, $justify: space-between);
+    flex-direction: column;
+    min-height: 460px;
+  }
+
+  &__quote {
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 129%;
+    letter-spacing: -0.5px;
+    max-width: 470px;
+    margin: 0;
+  }
+
+  &__quote-author {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 160%;
+    margin: 0 0 6px;
+  }
+
+  &__quote-author-subline {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 175%;
+    margin: 0;
+    color: $discriptionTextColor;
+
+    opacity: 0.7;
+  }
+}

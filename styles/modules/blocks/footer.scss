@@ -1,0 +1,31 @@
+.footer {
+  max-width: 1440px;
+  min-width: 320px;
+  min-height: 424px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  background-color: $footerColor;
+  box-sizing: border-box;
+  @include flex($align: flex-end, $justify: space-between);
+
+  &__container {
+    @include flex($align: flex-start, $justify: space-between);
+    flex-direction: column;
+    min-height: 284px;
+    
+
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    max-width: 229px;
+    margin: 0 0 50px;
+    padding: 0;
+  }
+
+  &__author {
+    margin: 100px 0 0;
+  }
+}

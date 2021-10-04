@@ -1,0 +1,25 @@
+.fix {
+  position: absolute;
+  z-index: 5;
+  right: 370px;
+  
+  bottom: 164px;
+  
+  // @include wh($w: 440px, $h: 300px);
+  
+  
+
+  
+
+  &__image {
+    @include wh($w: 340px, $h: 260px);
+    padding: 20px 50px;
+    object-fit: cover;
+
+    background-size: 340px, 260px;
+
+    border-radius: 20px;
+    background-color: $backgroundColor;
+    filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
+  }
+}

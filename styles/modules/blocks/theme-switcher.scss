@@ -1,0 +1,54 @@
+.theme-switcher {
+  @include flex();
+  gap: 22px;
+
+  &__light {
+    @include wh(28px, 28px);
+    
+    background-image: url(../images/theme-switcher-light.svg);
+    background-size: 28px 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__container {
+    @include wh(44px, 24px);
+    @include flex($justify: center);
+    border-radius: 9999px;
+    background-color: $buttonTextColor;
+    margin: 2px;
+  }
+
+  &__label {
+    @include wh(20px, 20px);
+  }
+
+  &__invisible-button {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  &__visible-button {
+    display: inline-block;
+    vertical-align: middle; /* элемент и текст будут правильно выровнены по вертикали. Работает в паре с inline-block */
+    @include wh(20px, 20px);
+    
+    border-radius: 50%
+  }
+
+  &__invisible-button:checked + &__visible-button {
+    background-color: $buttonBackgroundColor;
+  }
+
+  &__dark {
+    @include wh(20px, 20px);
+    
+    background-image: url(../images/theme-switcher-dark.svg);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

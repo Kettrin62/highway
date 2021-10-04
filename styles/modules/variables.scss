@@ -1,0 +1,59 @@
+$theme-light-colors: (
+  'primaryColor': #f4f4f4,
+  'primaryTextColor': #151515,
+  'secondaryTextColor': #222,
+  'buttonTextColor': #fff,
+
+  'buttonColor': #24b47e,
+  'buttonColor-active': #319e75,
+
+  'footerElementColor': #cfcfcf,
+  'inputColor': #c7c7c7,
+  'lineColor': #d7d4d4,
+  'slideColor': #ebebeb,
+  'secondaryColor': #efefef,
+);
+
+$theme-dark-colors: (
+  'primaryColor': #333,
+  'primaryTextColor': #fff,
+  'secondaryTextColor': #e5e5e5,
+  'buttonTextColor': #fff,
+  
+  'buttonColor': (
+    'disabled': #24b47e,
+    'active': #319e75,
+  ),
+
+  'footerElementColor': (
+    'switcherColor': #545454,
+    'labelColor': #565656,
+    'iconColor': #676767,
+  ),
+
+  'inputColor': #7d7d7d,
+  'lineColor': #707070,
+  'slideColor': #434343,
+  'secondaryColor': #2f2f2f,
+);
+
+
+
+$color: #fff;
+$fontFamily: 'Inter', Arial, sans-serif;
+
+@function theme-light-color($key) {
+  @return map-get($theme-light-colors, $key);
+}
+
+
+
+$backgroundColor: theme-light-color('primaryColor');
+$textColor: theme-light-color('primaryTextColor');
+$discriptionTextColor: theme-light-color('secondaryTextColor');
+$buttonBackgroundColor: theme-light-color('buttonColor');
+$buttonTextColor: theme-light-color('buttonTextColor');
+$buttonColorHover: theme-light-color('buttonColor-active');
+$lineColor: theme-light-color('lineColor');
+$footerColor: theme-light-color('secondaryColor');
+$formColor: theme-light-color('inputColor');

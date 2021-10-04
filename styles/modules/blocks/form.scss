@@ -1,0 +1,64 @@
+.form {
+  &__email {
+    @include wh(360px, 50px);
+    padding: 0;
+    border: 1px solid $formColor;
+    opacity: .5;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    
+  }
+
+  &__item {
+    display: block;
+    cursor: pointer;
+    border: 0;
+    @include wh(100%, 100%);
+    box-sizing: border-box;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    color: $textColor;
+    margin-left: 20px;
+    padding: 0;
+  }
+
+  &__item::placeholder {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    color: $discriptionTextColor;
+    opacity: 0.7;
+  }
+
+  &__item::-webkit-input-placeholder {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    color: $discriptionTextColor;
+    opacity: 0.7;
+  }
+
+  &__item::-moz-placeholder {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    color: $discriptionTextColor;
+    opacity: 0.7;
+  }
+
+  &__item::-ms-input-placeholder {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    color: $discriptionTextColor;
+    opacity: 0.7;
+  }
+
+  &__item:hover {
+    color: $textColor;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,31 @@
+.page {
+  margin: 0 auto;
+  font-family: $fontFamily;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  max-width: 1440px;
+  min-width: 320px;
+  // box-sizing: border-box;
+  
+
+  &_theme_light {
+    background-color: $backgroundColor;
+    color: $textColor;
+  }
+
+  &__section {
+    padding-left: 120px;
+  }
+
+  &__section_location {
+    &_center {
+      padding-right: 120px;
+    }
+
+    &_right {
+      padding-right: 0;
+    }
+  }
+}
+
