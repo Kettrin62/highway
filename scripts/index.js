@@ -1,6 +1,6 @@
 const swiper = new Swiper('.swiper', {
   // Optional parameters
-  slidesPerView: 2,
+  slidesPerView: 1,
   spaceBetween: 30,
   direction: 'horizontal',
   loop: true,
@@ -12,12 +12,7 @@ const swiper = new Swiper('.swiper', {
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper__button-next',
+    prevEl: '.swiper__button-prev',
   },
-
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
 });

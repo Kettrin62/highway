@@ -516,7 +516,7 @@ template {
   background-size: 340px, 260px;
   border-radius: 20px;
   background-color: #f4f4f4;
-  filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.44));
 }
 
 .merks {
@@ -564,6 +564,136 @@ template {
 .swiper {
   width: 100%;
   height: 922px;
+}
+.swiper__images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(650px, 1fr));
+  gap: 40px;
+  max-width: 1300px;
+  overflow: hidden;
+}
+.swiper__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  margin-top: 30px;
+}
+.swiper__button-prev {
+  left: 0;
+  right: auto;
+  position: absolute;
+  bottom: 60px;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #151515;
+}
+.swiper__button-prev::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: #ebebeb;
+  background-image: url(../images/swiper-button-prev.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50px;
+}
+.swiper__button-next {
+  left: 70px;
+  right: auto;
+  position: absolute;
+  bottom: 60px;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #151515;
+}
+.swiper__button-next::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: #ebebeb;
+  background-image: url(../images/swiper-button-next.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50px;
+}
+
+.bicycles__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bicycles__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.bicycles__link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 156%;
+  font-weight: normal;
+  opacity: 0.7;
+}
+.bicycles__link_active {
+  opacity: 1;
+  font-weight: 600;
+}
+.bicycles__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(254px, 1fr));
+  gap: 30px;
+  list-style-type: none;
+  margin: 70px 0 0;
+  padding: 0;
+}
+.bicycles__list-item {
+  width: 380px;
+  height: 380px;
+}
+.bicycles__link {
+  color: inherit;
+  text-decoration: none;
+}
+.bicycles__card {
+  margin: 0;
+  display: block;
+  border-radius: 20px;
+}
+.bicycles__image {
+  width: 340px;
+  height: 340px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 20px;
+  display: block;
+  -o-object-position: center;
+     object-position: center;
+  background-size: 380px, 280px;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+  filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
+}
+.bicycles__caption {
+  text-align: left;
+  margin-top: 22px;
+  font-size: 18px;
+  line-height: 122%;
+  font-weight: 600;
 }
 
 .training {

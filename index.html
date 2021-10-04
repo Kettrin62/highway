@@ -62,12 +62,6 @@
     </section>
 
     <section class="coating page__section page__section_location_right" id="part-coating">
-      <!-- <h2 class="title">Шоссе</h2>
-      <p class="discription">
-        На&nbsp;шоссейном велосипеде можно ездить по асфальту на&nbsp;разных 
-        градиентах: будь&nbsp;то горы или равнины. Гонки проходят в&nbsp;командном 
-        пелотоне, но&nbsp;тренироваться можно и&nbsp;самостоятельно.
-      </p> -->
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -77,7 +71,10 @@
               градиентах: будь&nbsp;то горы или равнины. Гонки проходят в&nbsp;командном 
               пелотоне, но&nbsp;тренироваться можно и&nbsp;самостоятельно.
             </p>
-            <img src="./images/road-image.png" alt="Шоссе" class="image">
+            <div class="swiper__images">
+              <img src="./images/road-image.png" alt="Шоссе" class="swiper__image">
+              <img src="./images/gravel-image.png" alt="Грэвел" class="swiper__image">
+            </div>
           </div>
           <div class="swiper-slide">
             <h2 class="title">Грэвел</h2>
@@ -86,7 +83,10 @@
               отличается, и&nbsp;на&nbsp;нём стоят более широкие покрышки, всё для того 
               чтобы проехать по&nbsp;лёгкому бездорожью.
             </p>
-            <img src="./images/gravel-image.png" alt="Грэвел" class="image">
+            <div class="swiper__images">
+              <img src="./images/gravel-image.png" alt="Шоссе" class="swiper__image">
+              <img src="./images/triathlon-image.png" alt="Грэвел" class="swiper__image">
+            </div>
           </div>
           <div class="swiper-slide">
             <h2 class="title">ТТ</h2>
@@ -95,29 +95,34 @@
               на&nbsp;таком велике только по&nbsp;равнинному асфальту, велик очень быстрые 
               и&nbsp;аэродинамичный.
             </p>
-            <img src="./images/triathlon-image.png" alt="Триатлон" class="image">
+            <div class="swiper__images">
+              <img src="./images/triathlon-image.png" alt="Шоссе" class="swiper__image">
+              <img src="./images/road-image.png" alt="Грэвел" class="swiper__image">
+            </div>
           </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper__button-prev"></div>
+        <div class="swiper__button-next"></div>
       </div>
     </section>
 
     <section class="bicycles page__section page__section_location_center" id="part-bicycles">
-      <h2 class="title">Велосипеды</h2>
-      <nav class="bicycles__nav">
-        <ul class="bicycles__links">
-          <li class="bicycles__link">
-            <a href="#part-road" class="bicycles__link bicycles__link_active">Шоссе</a>
-          </li>
-          <li class="bicycles__link">
-            <a href="#part-gravel" class="bicycles__link">Грэвел</a>
-          </li>
-          <li class="bicycles__link">
-            <a href="#part-triathlon" class="bicycles__link">TT</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="bicycles__container">
+        <h2 class="title">Велосипеды</h2>
+        <nav class="bicycles__nav">
+          <ul class="bicycles__links">
+            <li class="bicycles__link">
+              <a href="#part-road" class="bicycles__link bicycles__link_active">Шоссе</a>
+            </li>
+            <li class="bicycles__link">
+              <a href="#part-gravel" class="bicycles__link">Грэвел</a>
+            </li>
+            <li class="bicycles__link">
+              <a href="#part-triathlon" class="bicycles__link">TT</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <ul class="bicycles__list" id="part-road">
         <li class="bicycles__list-item">
           <figure class="bicycles__card">
@@ -131,8 +136,8 @@
             <figcaption class="bicycles__caption">Cannondale Systemsix Himod</figcaption>
           </figure>
         </li>
-        <li class="bicycles__item">
-          <figure class="bicycles__list-card">
+        <li class="bicycles__list-item">
+          <figure class="bicycles__card">
             <img src="./images/bicycles-trek-domane-sl-7.png" alt="Велосипед" class="bicycles__image">
             <figcaption class="bicycles__caption">Trek Domane SL-7</figcaption>
           </figure>
@@ -218,7 +223,6 @@
         <label for="light" class="theme-switcher__label">
           <input type="radio" name="theme-switcher" id="light" class="theme-switcher__invisible-button" value="light" checked>
           <span class="theme-switcher__visible-button"></span>
-
         </label>
         <label for="dark" class="theme-switcher__label">
           <input type="radio" name="theme-switcher" id="dark" class="theme-switcher__invisible-button" value="dark">

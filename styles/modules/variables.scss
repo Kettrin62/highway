@@ -12,6 +12,7 @@ $theme-light-colors: (
   'lineColor': #d7d4d4,
   'slideColor': #ebebeb,
   'secondaryColor': #efefef,
+  'imageColor': #c4c4c4,
 );
 
 $theme-dark-colors: (
@@ -57,3 +58,5 @@ $buttonColorHover: theme-light-color('buttonColor-active');
 $lineColor: theme-light-color('lineColor');
 $footerColor: theme-light-color('secondaryColor');
 $formColor: theme-light-color('inputColor');
+$imageBackgroundColorColor: theme-light-color('imageColor');
+$swiperButtonColor: theme-light-color('slideColor');

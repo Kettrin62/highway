@@ -1,3 +1,74 @@
 .bicycles {
-  
+  &__container {
+    @include flex($justify: space-between);
+  }
+
+  &__links {
+    @include flex();
+    gap: 40px;
+    list-style-type: none;
+    @include mp();
+    
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 156%;
+    font-weight: normal;
+    opacity: .7;
+
+    &_active {
+      opacity: 1;
+      font-weight: 600;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(254px, 1fr));
+    gap: 30px;
+    list-style-type: none;
+    @include mp($m: 70px 0 0);
+    
+  }
+
+  &__list-item {
+    @include wh(380px, 380px);
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__card {
+    margin: 0;
+    display: block;
+    border-radius: 20px;
+    
+
+  }
+
+  &__image {
+    @include wh($w: 340px, $h: 340px);
+    object-fit: cover;
+    padding: 20px;
+    display: block;
+    object-position: center;
+    background-size: 380px, 280px;
+    border-radius: 20px;
+    background-color: $backgroundColor;
+    filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
+}
+
+  &__caption {
+    text-align: left;
+    margin-top: 22px;
+    font-size: 18px;
+    line-height: 122%;
+    font-weight: 600;
+    
+  }
 }
