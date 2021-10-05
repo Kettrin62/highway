@@ -6,7 +6,7 @@
     opacity: .5;
     box-sizing: border-box;
     border-radius: 4px;
-
+    @include flex();
     
   }
 
@@ -21,8 +21,9 @@
     font-size: 13px;
     line-height: 215%;
     color: $textColor;
-    margin-left: 20px;
     padding: 0;
+    padding-left: 20px;
+
   }
 
   &__item::placeholder {
@@ -61,4 +62,25 @@
     color: $textColor;
     opacity: 1;
   }
+
+  &__item:focus {
+    outline: none;
+  }
+
+  &__button {
+    display: none;
+    border: none;
+    padding-right: 22px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    color: $textColor;
+    cursor: pointer;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  
 }

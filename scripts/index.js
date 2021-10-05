@@ -95,7 +95,6 @@ function addBicycles(name, src, link) {
   return cardElement;
 }
 
-
 // функция очищения контейнера с велосипедами
 function deleteBicycles() {
   // находим элементы с велосипедами
@@ -106,8 +105,6 @@ function deleteBicycles() {
   });
 }
 
-
-
 // функция заполнения контейнера с велосипедами
 function searchArray(array) {
   array.forEach((item) => {
@@ -117,12 +114,6 @@ function searchArray(array) {
     bicyclesContainer.append(bicyclesItem);
   });
 }
-
-
-
-
-
-
 
 // находим список ссылок, по которым меняется список велосипедов
 const bicyclesLinks = bodyElement.querySelectorAll('.bicycles__link');
@@ -162,7 +153,6 @@ function linkHandler(link) {
   });
 }
 
-
 searchArray(initialBicyclesRoad);
 
 // добавляем обработчик клика по ссылкам
@@ -170,3 +160,43 @@ bicyclesLinks.forEach((element) => {
   linkHandler(element);
   
 });
+
+
+
+// находим форму
+const formElement = bodyElement.querySelector('.form');
+// находим поле ввода
+const formInput = bodyElement.querySelector('.form__item');
+// находим кнопку отправки формы
+const formButton = bodyElement.querySelector('.form__button');
+
+// функция активации кнопки отправки формы
+function activeButton() {
+  formButton.classList.add('form__button_active');
+}
+
+// функция скрытия кнопки отправки
+function deActiveButton() {
+  formButton.classList.remove('form__button_active');
+}
+
+// обработчик отправки формы
+function formSubmitHandler (evt) {
+  evt.preventDefault();
+  console.log(formInput.placeholder);
+  evt.target.reset();
+  // вставим новое значение в инпут
+  formInput.placeholder = 'Круто!';
+  console.log(formInput.placeholder);
+  // скрываем кнопку отправки
+  deActiveButton();
+
+}
+
+// добавляем обработчик клика на форму
+formInput.addEventListener('click', () => {
+  activeButton();
+});
+
+// Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
+formElement.addEventListener('submit', formSubmitHandler);
