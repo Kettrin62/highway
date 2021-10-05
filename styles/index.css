@@ -665,6 +665,15 @@ template {
   width: 380px;
   height: 380px;
 }
+.bicycles__link-item {
+  color: inherit;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 122%;
+  font-weight: 600;
+  display: block;
+  cursor: pointer;
+}
 .bicycles__link {
   color: inherit;
   text-decoration: none;
