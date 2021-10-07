@@ -32,8 +32,16 @@
     font-size: 16px;
     line-height: 175%;
     margin: 0;
-    color: $discriptionTextColor;
-
     opacity: 0.7;
+
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
   }
 }

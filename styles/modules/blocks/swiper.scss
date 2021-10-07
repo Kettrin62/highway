@@ -32,64 +32,71 @@
   &__button-prev {
     left: 0;
     right: auto;
-
-
     position: absolute;
     bottom: 60px;
     @include wh(50px, 50px);
-    
     z-index: 10;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $textColor;
-    
-  }
+      
+    &::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50px;
+    }
+  
+    &_theme {
+      &_light::after {
+        background-color: $swiperButtonColor;
+        background-image: url(../images/swiper-button-prev.svg);
+      }
 
-  &__button-prev::after {
-    content: '';
-    width: 50px;
-    height: 50px;
-    background-color: $swiperButtonColor;
-    background-image: url(../images/swiper-button-prev.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50px;
+      &_dark::after {
+        background-color: $swiperButtonColorDark;
+        background-image: url(../images/swiper-button-prev-dark.svg);
+      }
+    }
   }
 
   &__button-next {
     left: 70px;
     right: auto;
-
-
     position: absolute;
     bottom: 60px;
     width: 50px;
     height: 50px;
-    
     z-index: 10;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $textColor;
     
-  }
+    &::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50px;
+    }
 
-  &__button-next::after {
-    content: '';
-    width: 50px;
-    height: 50px;
-    background-color: $swiperButtonColor;
-    background-image: url(../images/swiper-button-next.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50px;
-  }
-    
+    &_theme {
+      &_light::after {
+        background-color: $swiperButtonColor;
+        background-image: url(../images/swiper-button-next.svg);
+      }
 
-  
+      &_dark::after {
+        background-color: $swiperButtonColorDark;
+        background-image: url(../images/swiper-button-next-dark.svg);
+      }
+    }
+  }
 }
 
 

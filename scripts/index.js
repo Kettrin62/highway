@@ -200,3 +200,84 @@ formInput.addEventListener('click', () => {
 
 // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);
+
+// находим кнопки свитчера
+const lightSwitcherButton = bodyElement.querySelector('#light');
+const darkSwitcherButton = bodyElement.querySelector('#dark');
+// находим нужные нам элементы страницы
+const discriptionElements = bodyElement.querySelectorAll('.discription');
+const footerElement = bodyElement.querySelector('.footer');
+const introductionCaptionElement = bodyElement.querySelector('.introduction__caption');
+const merksQuoteAuthorSublineElement = bodyElement.querySelector('.merks__quote-author-subline');
+const swiperPrevButton = bodyElement.querySelector('.swiper__button-prev');
+const swiperNextButton = bodyElement.querySelector('.swiper__button-next');
+const themeSwitcherLightElement = bodyElement.querySelector('.theme-switcher__light');
+const themeSwitcherElement = bodyElement.querySelector('.theme-switcher__container');
+const themeSwitcherDarkElement = bodyElement.querySelector('.theme-switcher__dark');
+const footerAuthorElement = bodyElement.querySelector('.footer__author');
+
+// обработчик клика на свитчер темной темы
+darkSwitcherButton.addEventListener('click', () => {
+  bodyElement.classList.remove('page_theme_light');
+  discriptionElements.forEach((element) => {
+    element.classList.remove('discription_theme_light');
+  });
+  footerElement.classList.remove('footer_theme_light');
+  introductionCaptionElement.classList.remove('introduction__caption_theme_light');
+  merksQuoteAuthorSublineElement.classList.remove('merks__quote-author-subline_theme_light');
+  swiperPrevButton.classList.remove('swiper__button-prev_theme_light');
+  swiperNextButton.classList.remove('swiper__button-next_theme_light');
+  themeSwitcherLightElement.classList.remove('theme-switcher__light_theme_light');
+  themeSwitcherElement.classList.remove('theme-switcher__container_theme_light');
+  themeSwitcherDarkElement.classList.remove('theme-switcher__dark_theme_light');
+  formInput.classList.remove('form__item_theme_light');
+  footerAuthorElement.classList.remove('footer__author_theme_light');
+  
+  bodyElement.classList.add('page_theme_dark');
+  discriptionElements.forEach((element) => {
+    element.classList.add('discription_theme_dark');
+  });
+  footerElement.classList.add('footer_theme_dark');
+  introductionCaptionElement.classList.add('introduction__caption_theme_dark');
+  merksQuoteAuthorSublineElement.classList.add('merks__quote-author-subline_theme_dark');
+  swiperPrevButton.classList.add('swiper__button-prev_theme_dark');
+  swiperNextButton.classList.add('swiper__button-next_theme_dark');
+  themeSwitcherLightElement.classList.add('theme-switcher__light_theme_dark');
+  themeSwitcherElement.classList.add('theme-switcher__container_theme_dark');
+  themeSwitcherDarkElement.classList.add('theme-switcher__dark_theme_dark');
+  formInput.classList.add('form__item_theme_dark');
+  footerAuthorElement.classList.add('footer__author_theme_dark');
+});
+
+// обработчик клика на свитчер светлой темы
+lightSwitcherButton.addEventListener('click', () => {
+  bodyElement.classList.remove('page_theme_dark');
+  discriptionElements.forEach((element) => {
+    element.classList.remove('discription_theme_dark');
+  });
+  footerElement.classList.remove('footer_theme_dark');
+  introductionCaptionElement.classList.remove('introduction__caption_theme_dark');
+  merksQuoteAuthorSublineElement.classList.remove('merks__quote-author-subline_theme_dark');
+  swiperPrevButton.classList.remove('swiper__button-prev_theme_dark');
+  swiperNextButton.classList.remove('swiper__button-next_theme_dark');
+  themeSwitcherLightElement.classList.remove('theme-switcher__light_theme_dark');
+  themeSwitcherElement.classList.remove('theme-switcher__container_theme_dark');
+  themeSwitcherDarkElement.classList.remove('theme-switcher__dark_theme_dark');
+  formInput.classList.remove('form__item_theme_dark');
+  footerAuthorElement.classList.remove('footer__author_theme_dark');
+  
+  bodyElement.classList.add('page_theme_light');
+  discriptionElements.forEach((element) => {
+    element.classList.add('discription_theme_light');
+  });
+  footerElement.classList.add('footer_theme_light');
+  introductionCaptionElement.classList.add('introduction__caption_theme_light');
+  merksQuoteAuthorSublineElement.classList.add('merks__quote-author-subline_theme_light');
+  swiperPrevButton.classList.add('swiper__button-prev_theme_light');
+  swiperNextButton.classList.add('swiper__button-next_theme_light');
+  themeSwitcherLightElement.classList.add('theme-switcher__light_theme_light');
+  themeSwitcherElement.classList.add('theme-switcher__container_theme_light');
+  themeSwitcherDarkElement.classList.add('theme-switcher__dark_theme_light');
+  formInput.classList.add('form__item_theme_light');
+  footerAuthorElement.classList.add('footer__author_theme_light');
+});

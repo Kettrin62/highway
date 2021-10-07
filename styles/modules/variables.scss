@@ -21,16 +21,14 @@ $theme-dark-colors: (
   'secondaryTextColor': #e5e5e5,
   'buttonTextColor': #fff,
   
-  'buttonColor': (
-    'disabled': #24b47e,
-    'active': #319e75,
-  ),
+  'buttonColor': #24b47e,
+  'buttonColor-active': #319e75,
+  
 
-  'footerElementColor': (
-    'switcherColor': #545454,
-    'labelColor': #565656,
-    'iconColor': #676767,
-  ),
+  'footerElementColor-switcherColor': #545454,
+  'footerElementColor-labelColor': #565656,
+  'footerElementColor-iconColor': #676767,
+  
 
   'inputColor': #7d7d7d,
   'lineColor': #707070,
@@ -47,6 +45,10 @@ $fontFamily: 'Inter', Arial, sans-serif;
   @return map-get($theme-light-colors, $key);
 }
 
+@function theme-dark-color($key) {
+  @return map-get($theme-dark-colors, $key);
+}
+
 
 
 $backgroundColor: theme-light-color('primaryColor');
@@ -57,6 +59,28 @@ $buttonTextColor: theme-light-color('buttonTextColor');
 $buttonColorHover: theme-light-color('buttonColor-active');
 $lineColor: theme-light-color('lineColor');
 $footerColor: theme-light-color('secondaryColor');
+$footerTextColor: theme-light-color('footerElementColor');
 $formColor: theme-light-color('inputColor');
 $imageBackgroundColorColor: theme-light-color('imageColor');
 $swiperButtonColor: theme-light-color('slideColor');
+$switcherColor: theme-light-color('buttonTextColor');
+
+$backgroundColorDark: theme-dark-color('primaryColor');
+$textColorDark: theme-dark-color('primaryTextColor');
+$discriptionTextColorDark: theme-dark-color('secondaryTextColor');
+$buttonTextColorDark: theme-dark-color('buttonTextColor');
+$footerColorDark: theme-dark-color('secondaryColor');
+$footerTextColorDark: theme-dark-color('footerElementColor-labelColor');
+$formColorDark: theme-dark-color('inputColor');
+$swiperButtonColorDark: theme-dark-color('slideColor');
+$switcherColorDark: theme-dark-color('footerElementColor-switcherColor');
+$lineColorDark: theme-dark-color('lineColor');
+
+$buttonBackgroundColor: theme-light-color('buttonColor');
+$buttonColorHover: theme-light-color('buttonColor-active');
+
+
+
+
+$imageBackgroundColorColor: theme-light-color('imageColor');
+

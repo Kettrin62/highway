@@ -4,7 +4,6 @@
   min-height: 424px;
   padding-top: 80px;
   padding-bottom: 60px;
-  background-color: $footerColor;
   box-sizing: border-box;
   @include flex($align: flex-end, $justify: space-between);
 
@@ -12,8 +11,6 @@
     @include flex($align: flex-start, $justify: space-between);
     flex-direction: column;
     min-height: 284px;
-    
-
   }
 
   &__title {
@@ -27,5 +24,25 @@
 
   &__author {
     margin: 100px 0 0;
+
+    &_theme {
+      &_light {
+        color: $footerTextColor;
+      }
+  
+      &_dark {
+        color: $footerTextColorDark;
+      }
+    }
+  }
+
+  &_theme {
+    &_light {
+      background-color: $footerColor;
+    }
+
+    &_dark {
+      background-color: $footerColorDark;
+    }
   }
 }

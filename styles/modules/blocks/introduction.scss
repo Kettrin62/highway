@@ -52,7 +52,6 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 100%;
-    color: $textColor;
     margin: 167px 0 0;
     position: relative;
     max-width: 194px;
@@ -64,7 +63,24 @@
       position: absolute;
       top: 50%;
       right: -162px;
-      border-bottom: 2px $lineColor solid;
+    }
+
+    &_theme {
+      &_light {
+        color: $textColor;
+
+        &::before {
+          border-bottom: 2px $lineColor solid;
+        }
+      }
+
+      &_dark {
+        color: $textColorDark;
+
+        &::before {
+          border-bottom: 2px $lineColorDark solid;
+        }
+      }
     }
   }
 

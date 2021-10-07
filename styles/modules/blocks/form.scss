@@ -2,12 +2,20 @@
   &__email {
     @include wh(360px, 50px);
     padding: 0;
-    border: 1px solid $formColor;
     opacity: .5;
     box-sizing: border-box;
     border-radius: 4px;
     @include flex();
     
+    &_theme {
+      &_light {
+        border: 1px solid $formColor;
+      }
+
+      &_dark {
+        border: 1px solid $formColorDark;
+      }
+    }
   }
 
   &__item {
@@ -20,10 +28,18 @@
     font-weight: 500;
     font-size: 13px;
     line-height: 215%;
-    color: $textColor;
     padding: 0;
     padding-left: 20px;
 
+    &_theme {
+      &_light {
+        color: $textColor;
+      }
+
+      &_dark {
+        color: $textColorDark;
+      }
+    }
   }
 
   &__item::placeholder {
@@ -32,6 +48,11 @@
     line-height: 215%;
     color: $discriptionTextColor;
     opacity: 0.7;
+  }
+
+  &__item::placeholder:hover {
+    color: $textColor;
+    opacity: 1;
   }
 
   &__item::-webkit-input-placeholder {
@@ -74,11 +95,20 @@
     font-weight: 500;
     font-size: 13px;
     line-height: 215%;
-    color: $textColor;
     cursor: pointer;
 
     &_active {
       display: block;
+    }
+
+    &_theme {
+      &_light {
+        color: $textColor;
+      }
+
+      &_dark {
+        color: $textColorDark;
+      }
     }
   }
 

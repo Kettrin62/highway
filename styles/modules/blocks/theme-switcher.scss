@@ -5,18 +5,37 @@
   &__light {
     @include wh(28px, 28px);
     
-    background-image: url(../images/theme-switcher-light.svg);
+    // background-image: url(../images/theme-switcher-light.svg);
     background-size: 28px 28px;
     background-repeat: no-repeat;
     background-position: center;
+
+    &_theme {
+      &_light {
+        background-image: url(../images/theme-switcher-light.svg);
+      }
+
+      &_dark {
+        background-image: url(../images/theme-switcher-light-dark.svg);
+      }
+    }
   }
 
   &__container {
     @include wh(44px, 24px);
     @include flex($justify: center);
     border-radius: 9999px;
-    background-color: $buttonTextColor;
     margin: 2px;
+
+    &_theme {
+      &_light {
+        background-color: $switcherColor;
+      }
+
+      &_dark {
+        background-color: $switcherColorDark;
+      }
+    }
   }
 
   &__label {
@@ -45,10 +64,18 @@
 
   &__dark {
     @include wh(20px, 20px);
-    
-    background-image: url(../images/theme-switcher-dark.svg);
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
+
+    &_theme {
+      &_light {
+        background-image: url(../images/theme-switcher-dark.svg);
+      }
+
+      &_dark {
+        background-image: url(../images/theme-switcher-dark-dark.svg);
+      }
+    }
   }
 }
