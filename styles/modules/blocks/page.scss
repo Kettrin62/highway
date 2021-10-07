@@ -34,3 +34,20 @@
   }
 }
 
+@media all and (max-width: 600px) {
+  .page__section {
+    padding-left: 18px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .page__section_location_center {
+    padding-right: 18px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .page__section_location_right {
+    padding-right: 18px;
+  }
+}

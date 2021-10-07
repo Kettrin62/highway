@@ -4,6 +4,7 @@
   padding-top: 90px;
   padding-bottom: 120px;
   // max-width: 1320px;
+  
 
   &__container {
     @include flex($align: flex-start, $justify: space-between);
@@ -29,8 +30,10 @@
 
   &__image {
     padding-top: 60px;
-    background-size: cover;
-    width: 580px;
+    object-fit: cover;
+    max-width: 580px;
+    width: 100%;
+    
   }
 
 

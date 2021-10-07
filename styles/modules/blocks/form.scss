@@ -1,7 +1,7 @@
 .form {
   &__email {
     @include wh(360px, 50px);
-    padding: 0;
+    @include mp();
     opacity: .5;
     box-sizing: border-box;
     border-radius: 4px;
@@ -111,6 +111,13 @@
       }
     }
   }
-
-  
 }
+
+@media all and (max-width: 396px) {
+  .form {
+    &__email {
+      width: 284px;
+    }
+  }
+}
+

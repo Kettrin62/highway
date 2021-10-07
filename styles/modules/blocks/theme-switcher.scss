@@ -79,3 +79,9 @@
     }
   }
 }
+
+@media screen and (max-width: 740px) {
+  .theme-switcher_place_footer {
+    display: none;
+  }
+}

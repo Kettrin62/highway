@@ -386,6 +386,21 @@ template {
   color: #fff;
 }
 
+@media all and (max-width: 600px) {
+  .page__section {
+    padding-left: 18px;
+  }
+}
+@media all and (max-width: 600px) {
+  .page__section_location_center {
+    padding-right: 18px;
+  }
+}
+@media all and (max-width: 600px) {
+  .page__section_location_right {
+    padding-right: 18px;
+  }
+}
 .header {
   min-height: 74px;
   display: flex;
@@ -419,11 +434,12 @@ template {
 }
 
 .introduction {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 100%;
   padding-top: 20px;
-  gap: 100px;
+  gap: 50px;
   max-width: 1320px;
   position: relative;
 }
@@ -492,8 +508,12 @@ template {
   border-bottom: 2px #707070 solid;
 }
 .introduction__image {
-  background-size: cover;
-  width: 610px;
+  max-width: 610px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  grid-column: 2/3;
+  grid-row: 1/5;
 }
 
 .title {
@@ -785,8 +805,10 @@ template {
 }
 .training__image {
   padding-top: 60px;
-  background-size: cover;
-  width: 580px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 580px;
+  width: 100%;
 }
 
 .footer {
@@ -815,6 +837,9 @@ template {
   margin: 0 0 50px;
   padding: 0;
 }
+.footer__label {
+  width: 100%;
+}
 .footer__author {
   margin: 100px 0 0;
 }
@@ -831,9 +856,31 @@ template {
   background-color: #2f2f2f;
 }
 
+@media all and (max-width: 740px) {
+  .footer__label {
+    background-image: url(../images/footer-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 38px 38px;
+  }
+}
+@media all and (max-width: 600px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 25px;
+    margin: 0 auto;
+    min-height: 358px;
+  }
+}
+@media all and (max-width: 396px) {
+  .footer__title {
+    max-width: 284px;
+  }
+}
 .form__email {
   width: 360px;
   height: 50px;
+  margin: 0;
   padding: 0;
   opacity: 0.5;
   box-sizing: border-box;
@@ -948,6 +995,11 @@ template {
   color: #fff;
 }
 
+@media all and (max-width: 396px) {
+  .form__email {
+    width: 284px;
+  }
+}
 .theme-switcher {
   display: flex;
   align-items: center;
@@ -1016,4 +1068,10 @@ template {
 }
 .theme-switcher__dark_theme_dark {
   background-image: url(../images/theme-switcher-dark-dark.svg);
+}
+
+@media screen and (max-width: 740px) {
+  .theme-switcher_place_footer {
+    display: none;
+  }
 }/*# sourceMappingURL=index.css.map */

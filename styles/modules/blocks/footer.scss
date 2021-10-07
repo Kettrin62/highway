@@ -22,6 +22,10 @@
     padding: 0;
   }
 
+  &__label {
+    width: 100%;
+  }
+
   &__author {
     margin: 100px 0 0;
 
@@ -46,3 +50,35 @@
     }
   }
 }
+
+@media all and (max-width: 740px) {
+  .footer {
+    &__label {
+      background-image: url(../images/footer-mobile.svg);
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-size: 38px 38px;
+
+    }
+  }
+}
+
+@media all and (max-width: 600px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 25px;
+    margin: 0 auto;
+    min-height: 358px;
+  }
+}
+
+@media all and (max-width: 396px) {
+  .footer {
+    &__title {
+      max-width: 284px;
+    }
+  }
+}
+
+
+

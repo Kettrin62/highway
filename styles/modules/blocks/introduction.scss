@@ -1,10 +1,11 @@
 .introduction {
-  // display: grid;
-  // grid-template-columns: repeat(2, 1fr);
-  @include flex($align: flex-start, $justify: space-between);
-  // width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  // @include flex($align: flex-start, $justify: space-between);
+  width: 100%;
   padding-top: 20px;
-  gap: 100px;
+  gap: 50px;
   max-width: 1320px;
   // margin-right: 0;
   position: relative;
@@ -85,8 +86,12 @@
   }
 
   &__image {
-    background-size: cover;
-    width: 610px;
-    // width: 50%;
+    max-width: 610px;
+    width: 100%;
+    object-fit: cover;
+    grid-column: 2/3;
+    grid-row: 1/5;
+
+    
   }
 }
