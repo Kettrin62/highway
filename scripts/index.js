@@ -1,3 +1,40 @@
+// находим элемент body
+const bodyElement = document.querySelector('.page');
+// находим контейнер с меню
+const menuElement = bodyElement.querySelector('.menu');
+// находим кнопку меню
+const menuButton = bodyElement.querySelector('.button-menu');
+// находим кнопку закрытия меню
+const menuCloseButton = bodyElement.querySelector('.menu__button-close');
+
+// функция открытия меню
+function openMenu() {
+  menuElement.classList.add('menu_opened');
+}
+
+// функция закрытия меню
+function closeMenu() {
+  menuElement.classList.remove('menu_opened');
+}
+
+// обработчик клика по кнопке меню
+menuButton.addEventListener('click', () => {
+  openMenu();
+});
+
+// обработчик клика по кнопке закрытия меню
+menuCloseButton.addEventListener('click', () => {
+  closeMenu();
+});
+
+
+
+
+
+
+
+
+
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   slidesPerView: 1,
@@ -20,8 +57,7 @@ const swiper = new Swiper('.swiper', {
 
 
 
-// находим элемент body
-const bodyElement = document.querySelector('.page');
+
 // готовый массив с велосипедами шоссе
 const initialBicyclesRoad = [
   {
@@ -281,3 +317,5 @@ lightSwitcherButton.addEventListener('click', () => {
   formInput.classList.add('form__item_theme_light');
   footerAuthorElement.classList.add('footer__author_theme_light');
 });
+
+

@@ -8,24 +8,21 @@
   z-index: 10;
   background-color: inherit;
   
-  
   &__nav {
     margin-right: 120px;
   }
 
-  &__links {
-    @include flex();
-    gap: 34px;
-    list-style-type: none;
-    @include mp();
-    
-  }
+  
+}
 
-  &__link {
-    color: inherit;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 129%;
-    font-weight: 500;
+@media all and (max-width: 640px) {
+  .header {
+    &__nav {
+      display: none;
+    }
+
+    &__button {
+      margin-right: 30px;
+    }
   }
 }
