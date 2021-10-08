@@ -1,5 +1,9 @@
 .swiper {
-  @include wh(100%, 922px);
+  @include wh(100%, 802px);
+
+  &__item {
+    margin-bottom: 50px;
+  }
 
   &__images {
     display: grid;
@@ -33,7 +37,7 @@
     left: 0;
     right: auto;
     position: absolute;
-    bottom: 60px;
+    bottom: 0;
     @include wh(50px, 50px);
     z-index: 10;
     cursor: pointer;
@@ -67,7 +71,7 @@
     left: 70px;
     right: auto;
     position: absolute;
-    bottom: 60px;
+    bottom: 0;
     width: 50px;
     height: 50px;
     z-index: 10;

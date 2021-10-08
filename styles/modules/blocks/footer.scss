@@ -24,6 +24,7 @@
   }
 
   &__label {
+    @include flex($align: flex-end, $justify: space-between);
     width: 100%;
   }
 
@@ -52,7 +53,7 @@
   }
 }
 
-@media all and (max-width: 740px) {
+@media all and (max-width: 640px) {
   .footer {
     &__label {
       background-image: url(../images/footer-mobile.svg);

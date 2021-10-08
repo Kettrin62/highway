@@ -1,14 +1,20 @@
 .introduction {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 230px 160px 50px 1fr;
   // @include flex($align: flex-start, $justify: space-between);
   width: 100%;
   padding-top: 20px;
-  gap: 50px;
-  max-width: 1320px;
+  column-gap: 60px;
+  max-width: 1440px;
   // margin-right: 0;
   position: relative;
+  max-height: 856px;
+  box-sizing: border-box;
+
+  &__item {
+    padding-top: 60px;
+  }
 
   &__button {
     width: 180px;
@@ -62,7 +68,7 @@
       display: block;
       width: 132px;
       position: absolute;
-      top: 50%;
+      top: 10px;
       right: -162px;
     }
 
@@ -91,7 +97,12 @@
     object-fit: cover;
     grid-column: 2/3;
     grid-row: 1/5;
-
+    height: 100%;
+    max-height: 836px;
+    
+    
+    
+    justify-self: end;
     
   }
 }

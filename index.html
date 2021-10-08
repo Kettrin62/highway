@@ -82,13 +82,13 @@
       </div>
     </section> -->
 
-    <!-- <section class="introduction page__section page__section_location_right">
+    <section class="introduction page__section page__section_location_right">
       
-      <h1 class="title">Шоссе, ТТ и&nbsp;Грэвел</h1>
+      <h1 class="title introduction__item">Шоссе, ТТ и&nbsp;Грэвел</h1>
       <img src="./images/introduction-image.png" alt="Триатлонная дорога" class="introduction__image">
       <p class="discription discription_theme_light">
         Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным 
-        маршрутам&nbsp;&mdash; нужно только определиться с&nbsp;выбором 
+        маршрутам&nbsp;&ndash; нужно только определиться с&nbsp;выбором 
         велосипеда и&nbsp;отправиться в&nbsp;путь.
       </p>
       <button class="introduction__button">Подробнее</button>
@@ -98,13 +98,13 @@
       <div class="fix">
         <img src="./images/fix-image.png" alt="Велосипед" class="fix__image">
       </div>
-    </section> -->
+    </section>
 
-    <!-- <section class="merks page__section page__section_location_center">
+    <section class="merks page__section page__section_location_center">
       <img src="./images/merks-image.png" alt="Триатлонная дорога" class="merks__image">
       <div class="merks__container">
         <blockquote class="merks__quote">
-          &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&mdash; 
+          &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&ndash;
           но&nbsp;катайся&raquo;
         </blockquote>
         <div class="merks__author">
@@ -112,14 +112,14 @@
           <p class="merks__quote-author-subline merks__quote-author-subline_theme_light">Велогонщик</p>
         </div>
       </div>
-    </section> -->
+    </section>
 
-    <!-- <section class="coating page__section page__section_location_right" id="part-coating">
+    <section class="coating page__section page__section_location_right" id="part-coating">
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <h2 class="title">Шоссе</h2>
-            <p class="discription discription_theme_light">
+            <h2 class="title swiper__item">Шоссе</h2>
+            <p class="discription discription_theme_light swiper__item">
               На&nbsp;шоссейном велосипеде можно ездить по асфальту на&nbsp;разных 
               градиентах: будь&nbsp;то горы или равнины. Гонки проходят в&nbsp;командном 
               пелотоне, но&nbsp;тренироваться можно и&nbsp;самостоятельно.
@@ -160,10 +160,10 @@
         <div class="swiper__button-prev swiper__button-prev_theme_light"></div>
         <div class="swiper__button-next swiper__button-next_theme_light"></div>
       </div>
-    </section> -->
+    </section>
 
 
-    <!-- <section class="bicycles page__section page__section_location_center" id="part-bicycles">
+    <section class="bicycles page__section page__section_location_center" id="part-bicycles">
       <div class="bicycles__container">
         <h2 class="title">Велосипеды</h2>
         <nav class="bicycles__nav">
@@ -183,30 +183,31 @@
       <ul class="bicycles__list">
 
       </ul>
-    </section> -->
+    </section>
 
 
 
-    <!-- <section class="training page__section page__section_location_center" id="part-training">
-      <div class="training__container">
-        <div class="training__discription">
-          <h2 class="title">Тренировки</h2>
-          <p class="discription discription_theme_light">
-            Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а&nbsp;записать эти 
-            тренировки поможет приложение Strava, а&nbsp;также это приложение позволит построить тренировочный план.
-          </p>
-        </div>
-        <ul class="training__links">
-          <li class="training__link">
-            <a href="https://www.strava.com" target="_blank" class="training__link">Strava</a>
-          </li>
-          <li class="training__link">
-            <a href="https://www.komoot.com" target="_blank" class="training__link">Komoot</a>
-          </li>
-        </ul>
-      </div>
+    <section class="training page__section page__section_location_center" id="part-training">
+      <!-- <div class="training__container"> -->
+        <!-- <div class="training__discription"> -->
+      <h2 class="title training__item">Тренировки</h2>
       <img src="./images/training-image.png" alt="Триатлонная дорога" class="training__image">
-    </section> -->
+      <p class="discription discription_theme_light training__item">
+        Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а&nbsp;записать эти 
+        тренировки поможет приложение Strava, а&nbsp;также это приложение позволит построить тренировочный план.
+      </p>
+      <!-- </div> -->
+      <ul class="training__links">
+        <li class="training__link">
+          <a href="https://www.strava.com" target="_blank" class="training__link">Strava</a>
+        </li>
+        <li class="training__link">
+          <a href="https://www.komoot.com" target="_blank" class="training__link">Komoot</a>
+        </li>
+      </ul>
+      <!-- </div> -->
+      
+    </section>
   
   </main>
   <footer class="footer page__section page__section_location_center footer_theme_light">
@@ -220,23 +221,24 @@
       </form>
       <div class="footer__label">
         <p class="footer__author footer__author_theme_light">&copy; Road Club 2021</p>
+        <div class="theme-switcher theme-switcher_place_footer">
+          <div class="theme-switcher__light theme-switcher__light_theme_light"></div>
+          <div class="theme-switcher__container theme-switcher__container_theme_light">
+            <label for="light" class="theme-switcher__label">
+              <input type="radio" name="theme-switcher" id="light" class="theme-switcher__invisible-button" value="light" checked>
+              <span class="theme-switcher__visible-button"></span>
+            </label>
+            <label for="dark" class="theme-switcher__label">
+              <input type="radio" name="theme-switcher" id="dark" class="theme-switcher__invisible-button" value="dark">
+              <span class="theme-switcher__visible-button"></span>
+            </label>
+          </div>
+          <div class="theme-switcher__dark theme-switcher__dark_theme_light"></div>
+        </div>
       </div>
       
     </div>
-    <div class="theme-switcher theme-switcher_place_footer">
-      <div class="theme-switcher__light theme-switcher__light_theme_light"></div>
-      <div class="theme-switcher__container theme-switcher__container_theme_light">
-        <label for="light" class="theme-switcher__label">
-          <input type="radio" name="theme-switcher" id="light" class="theme-switcher__invisible-button" value="light" checked>
-          <span class="theme-switcher__visible-button"></span>
-        </label>
-        <label for="dark" class="theme-switcher__label">
-          <input type="radio" name="theme-switcher" id="dark" class="theme-switcher__invisible-button" value="dark">
-          <span class="theme-switcher__visible-button"></span>
-        </label>
-      </div>
-      <div class="theme-switcher__dark theme-switcher__dark_theme_light"></div>
-    </div>
+    
 
 
   </footer>
