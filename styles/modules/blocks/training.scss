@@ -1,10 +1,9 @@
 .training {
-  // @include flex($align: flex-start, $justify: space-between);
+  display: grid;
   column-gap: 40px;
   padding-top: 150px;
   padding-bottom: 120px;
-  // max-width: 1200px;
-  display: grid;
+  max-width: 1200px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 1fr 1fr;
   align-items: start;
@@ -53,5 +52,14 @@
 
   &__item {
     margin-top: 4px;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .training {
+    &__link {
+      font-size: 14px;
+      line-height: 143%;
+    }
   }
 }

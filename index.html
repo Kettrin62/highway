@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./styles/index.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <title>Шоссе, ТТ и Грэвел</title>
 </head>
 <body class="page page_theme_light">
 
   <header class="header">
-    <nav class="nav header__nav">
+    <nav class="nav header__nav page__section page__section_location_center">
       <ul class="nav__links nav__links_type_horizontal">
         <li class="nav__link">
           <a href="#part-coating" class="nav__link">Покрытия и градиенты</a>
@@ -31,7 +31,7 @@
       <span class="button-menu__line"></span>
     </button>
     <section class="menu">
-      <button type="button" class="menu__button-close"></button>
+      <button type="button" class="menu__button-close menu__button-close_theme_light"></button>
       <nav class="nav">
         <ul class="nav__links nav__links_type_vertical">
           <li class="nav__link">
@@ -65,22 +65,7 @@
 
   <main class="content">
 
-    <!-- <section class="introduction page__section page__section_location_right">
-      <div class="introduction__container">
-        <h1 class="title">Шоссе, ТТ и&nbsp;Грэвел</h1>
-        <p class="discription discription_theme_light">
-          Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным 
-          маршрутам&nbsp;&mdash; нужно только определиться с&nbsp;выбором 
-          велосипеда и&nbsp;отправиться в&nbsp;путь.
-        </p>
-        <button class="introduction__button">Подробнее</button>
-        <p class="introduction__caption introduction__caption_theme_light">Cannondale Systemsix</p>
-      </div>
-      <img src="./images/introduction-image.png" alt="Триатлонная дорога" class="introduction__image">
-      <div class="fix">
-        <img src="./images/fix-image.png" alt="Велосипед" class="fix__image">
-      </div>
-    </section> -->
+    
 
     <section class="introduction page__section page__section_location_right">
       
@@ -94,28 +79,30 @@
       <button class="introduction__button">Подробнее</button>
       <p class="introduction__caption introduction__caption_theme_light">Cannondale Systemsix</p>
       
-      
-      <div class="fix">
+      <!-- <div class="fix">
+        <div class="fix__container"></div>
         <img src="./images/fix-image.png" alt="Велосипед" class="fix__image">
-      </div>
+        <div class="fix__container"></div>
+      </div> -->
+      
     </section>
 
     <section class="merks page__section page__section_location_center">
       <img src="./images/merks-image.png" alt="Триатлонная дорога" class="merks__image">
-      <div class="merks__container">
-        <blockquote class="merks__quote">
-          &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&ndash;
-          но&nbsp;катайся&raquo;
-        </blockquote>
-        <div class="merks__author">
-          <h3 class="merks__quote-author">Эдди Меркс</h3>
-          <p class="merks__quote-author-subline merks__quote-author-subline_theme_light">Велогонщик</p>
-        </div>
+      <!-- <div class="merks__container"> -->
+      <blockquote class="merks__quote">
+        &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&ndash;
+        но&nbsp;катайся&raquo;
+      </blockquote>
+      <div class="merks__author">
+        <h3 class="merks__quote-author">Эдди Меркс</h3>
+        <p class="merks__quote-author-subline merks__quote-author-subline_theme_light">Велогонщик</p>
       </div>
+      <!-- </div> -->
     </section>
 
     <section class="coating page__section page__section_location_right" id="part-coating">
-      <div class="swiper">
+      <div class="swiper swiper_place_coating">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <h2 class="title swiper__item">Шоссе</h2>
@@ -131,8 +118,8 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <h2 class="title">Грэвел</h2>
-            <p class="discription discription_theme_light">
+            <h2 class="title swiper__item">Грэвел</h2>
+            <p class="discription discription_theme_light swiper__item">
               Грэвел похож на&nbsp;шоссейный велосипед, но&nbsp;конструкция рамы немного 
               отличается, и&nbsp;на&nbsp;нём стоят более широкие покрышки, всё для того 
               чтобы проехать по&nbsp;лёгкому бездорожью.
@@ -144,8 +131,8 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <h2 class="title">ТТ</h2>
-            <p class="discription discription_theme_light">
+            <h2 class="title swiper__item">ТТ</h2>
+            <p class="discription discription_theme_light swiper__item">
               ТТ&nbsp;&mdash; это велосипед для триатлона или раздельного старта, гооняют 
               на&nbsp;таком велике только по&nbsp;равнинному асфальту, велик очень быстрые 
               и&nbsp;аэродинамичный.
@@ -163,19 +150,49 @@
     </section>
 
 
+
+    <!-- <section class="bicycles page__section page__section_location_center">
+      <div class="bicycles__container">
+        <h2 class="title">Велосипеды</h2>
+        <nav class="bicycles__nav">
+          <ul class="bicycles__links">
+            <li class="bicycles__link">
+              <p class="bicycles__link bicycles__link_active">Шоссе</p>
+            </li>
+            <li class="bicycles__link">
+              <p class="bicycles__link">Грэвел</p>
+            </li>
+            <li class="bicycles__link">
+              <p class="bicycles__link">TT</p>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="swiper swiper_place_bicycles">
+        <ul class="swiper-wrapper bicycles__list">
+          
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+    </section> -->
+    
+
+
+
     <section class="bicycles page__section page__section_location_center" id="part-bicycles">
       <div class="bicycles__container">
         <h2 class="title">Велосипеды</h2>
         <nav class="bicycles__nav">
           <ul class="bicycles__links">
             <li class="bicycles__link">
-              <a href="#part-bicycles" class="bicycles__link bicycles__link_active">Шоссе</a>
+              <button type="button" class="bicycles__link bicycles__link_active">Шоссе</button>
             </li>
             <li class="bicycles__link">
-              <a href="#part-bicycles" class="bicycles__link">Грэвел</a>
+              <button type="button" class="bicycles__link">Грэвел</button>
             </li>
             <li class="bicycles__link">
-              <a href="#part-bicycles" class="bicycles__link">TT</a>
+              <button type="button" class="bicycles__link">TT</button>
             </li>
           </ul>
         </nav>
@@ -210,8 +227,8 @@
     </section>
   
   </main>
-  <footer class="footer page__section page__section_location_center footer_theme_light">
-    <div class="footer__container">
+  <footer class="footer footer_theme_light">
+    <div class="footer__container page__section page__section_location_center">
       <h3 class="footer__title">Подпишитесь на рассылку &mdash;</h3>
       <form class="form">
         <fieldset class="form__email">
@@ -247,7 +264,7 @@
 
 
   <template id="bicycles-template">
-    <li class="bicycles__list-item">
+    <li class="bicycles__list-item swiper-slide">
       <a class="bicycles__link-item" target="_blank">
         <figure class="bicycles__card">
           <img class="bicycles__image">
@@ -260,3 +277,21 @@
   <script src="./scripts/index.js"></script>
 </body>
 </html>
+
+
+<!-- <section class="introduction page__section page__section_location_right">
+      <div class="introduction__container">
+        <h1 class="title">Шоссе, ТТ и&nbsp;Грэвел</h1>
+        <p class="discription discription_theme_light">
+          Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным 
+          маршрутам&nbsp;&mdash; нужно только определиться с&nbsp;выбором 
+          велосипеда и&nbsp;отправиться в&nbsp;путь.
+        </p>
+        <button class="introduction__button">Подробнее</button>
+        <p class="introduction__caption introduction__caption_theme_light">Cannondale Systemsix</p>
+      </div>
+      <img src="./images/introduction-image.png" alt="Триатлонная дорога" class="introduction__image">
+      <div class="fix">
+        <img src="./images/fix-image.png" alt="Велосипед" class="fix__image">
+      </div>
+    </section> -->

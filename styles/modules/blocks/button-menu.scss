@@ -14,7 +14,7 @@
   }
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 600px) {
   .button-menu {
     @include flex($justify: center);
     flex-direction: column;

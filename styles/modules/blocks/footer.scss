@@ -1,9 +1,10 @@
 .footer {
-  max-width: 1440px;
+  // max-width: 1440px;
   min-width: 320px;
+  width: 100%;
   min-height: 424px;
-  padding-top: 80px;
-  padding-bottom: 60px;
+  padding: 80px 0 60px;
+  
   box-sizing: border-box;
   @include flex($align: flex-end, $justify: space-between);
 
@@ -12,6 +13,9 @@
     flex-direction: column;
     min-height: 284px;
     width: 100%;
+    max-width: 1200px;
+    // margin: 0 auto;
+    // padding: 80px 0 60px;
   }
 
   &__title {
@@ -30,7 +34,10 @@
 
   &__author {
     margin: 100px 0 0;
-
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    
     &_theme {
       &_light {
         color: $footerTextColor;
@@ -53,25 +60,23 @@
   }
 }
 
-@media all and (max-width: 640px) {
-  .footer {
-    &__label {
-      background-image: url(../images/footer-mobile.svg);
-      background-repeat: no-repeat;
-      background-position: right bottom;
-      background-size: 38px 38px;
-      
-
-    }
-  }
-}
-
 @media all and (max-width: 600px) {
   .footer {
     padding-top: 60px;
     padding-bottom: 25px;
     margin: 0 auto;
     min-height: 358px;
+
+    &__label {
+      background-image: url(../images/footer-mobile.svg);
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-size: 38px 38px;
+    }
+
+    &__author {
+      font-weight: 500;
+    }
   }
 }
 

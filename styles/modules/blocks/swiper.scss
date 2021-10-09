@@ -1,5 +1,6 @@
 .swiper {
   @include wh(100%, 802px);
+  
 
   &__item {
     margin-bottom: 50px;
@@ -101,7 +102,28 @@
       }
     }
   }
+
+
+  &_place {
+    &_bicycles {
+      visibility: hidden;
+    }
+  }
+  
 }
+
+@media all and (max-width: 1182px) {
+  .swiper {
+    &_place {
+      &_bicycles {
+        visibility: visible;
+      }
+      
+    }
+  }
+}
+
+
 
 
 

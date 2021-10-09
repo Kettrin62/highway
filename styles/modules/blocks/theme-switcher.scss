@@ -4,7 +4,7 @@
 
   &__light {
     @include wh(28px, 28px);
-    
+
     // background-image: url(../images/theme-switcher-light.svg);
     background-size: 28px 28px;
     background-repeat: no-repeat;
@@ -54,8 +54,8 @@
     display: inline-block;
     vertical-align: middle; /* элемент и текст будут правильно выровнены по вертикали. Работает в паре с inline-block */
     @include wh(20px, 20px);
-    
-    border-radius: 50%
+    cursor: pointer;
+    border-radius: 50%;
   }
 
   &__invisible-button:checked + &__visible-button {
@@ -80,7 +80,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 600px) {
   .theme-switcher_place_footer {
     display: none;
   }

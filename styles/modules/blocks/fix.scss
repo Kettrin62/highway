@@ -1,22 +1,32 @@
 .fix {
   position: absolute;
   z-index: 5;
-  right: 370px;
-  
-  bottom: 164px;
+  right: 0;
+  top: 0;
+  height: calc(100% - 79px);
   
   // @include wh($w: 440px, $h: 300px);
-  
+  &__container {
+    @include wh(810px, 347px);
+
+    &:last-of-type {
+      height: 79px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
   
 
   
 
   &__image {
+    position: sticky;
+    top: 74px;
     @include wh($w: 340px, $h: 260px);
     padding: 20px 50px;
     object-fit: cover;
 
-    background-size: 340px, 260px;
+    
 
     border-radius: 20px;
     background-color: $backgroundColor;

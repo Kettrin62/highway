@@ -17,3 +17,11 @@
     }
   }
 }
+
+@media all and (max-width: 800px) {
+  .discription {
+    font-size: 12px;
+    line-height: 150%;
+    max-width: 284px;
+  }
+}

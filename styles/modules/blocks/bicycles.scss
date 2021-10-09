@@ -1,6 +1,8 @@
 .bicycles {
+  // padding: 60px 0;
   padding-top: 60px;
-  padding-bottom: 104px;
+  padding-bottom: 60px;
+  max-width: 1440px;
 
   &__container {
     @include flex($align: flex-end, $justify: space-between);
@@ -16,12 +18,15 @@
 
   &__link {
     color: inherit;
+    background-color: inherit;
     text-decoration: none;
     font-size: 18px;
     line-height: 156%;
     font-weight: normal;
     opacity: .7;
-    
+    @include mp();
+    border: none;
+    cursor: pointer;
 
     &_active {
       opacity: 1;
@@ -31,7 +36,7 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, minmax(254px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     list-style-type: none;
     @include mp($m: 120px 0 0);
@@ -52,11 +57,6 @@
     display: block;
     cursor: pointer;
     
-  }
-
-  &__link {
-    color: inherit;
-    text-decoration: none;
   }
 
   &__card {
@@ -89,5 +89,25 @@
     line-height: 122%;
     font-weight: 600;
     
+  }
+
+  
+}
+
+@media all and (max-width: 800px) {
+  .bicycles {
+    &__link {
+      font-size: 14px;
+      line-height: 143%;
+    }
+
+    &__caption {
+      text-align: left;
+      margin-top: 22px;
+      font-size: 14px;
+      line-height: 129%;
+      font-weight: 600;
+      
+    }
   }
 }

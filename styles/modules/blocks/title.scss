@@ -6,5 +6,12 @@
   max-width: 460px;
   // margin: 60px 0 50px;
   margin: 0;
-  
+}
+
+@media all and (max-width: 800px) {
+  .title {
+    font-size: 32px;
+    line-height: 125%;
+    max-width: 284px;
+  }
 }

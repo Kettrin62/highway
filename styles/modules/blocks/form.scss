@@ -46,42 +46,102 @@
     font-weight: 500;
     font-size: 13px;
     line-height: 215%;
-    color: $discriptionTextColor;
+    // color: $discriptionTextColor;
     opacity: 0.7;
+
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
   }
 
   &__item::placeholder:hover {
-    color: $textColor;
+    // color: $textColor;
     opacity: 1;
+
+    &_theme {
+      &_light {
+        color: $textColor;
+      }
+
+      &_dark {
+        color: $textColorDark;
+      }
+    }
   }
 
   &__item::-webkit-input-placeholder {
     font-weight: 500;
     font-size: 13px;
     line-height: 215%;
-    color: $discriptionTextColor;
+    // color: $discriptionTextColor;
     opacity: 0.7;
+
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
   }
 
   &__item::-moz-placeholder {
     font-weight: 500;
     font-size: 13px;
     line-height: 215%;
-    color: $discriptionTextColor;
+    // color: $discriptionTextColor;
     opacity: 0.7;
+
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
   }
 
   &__item::-ms-input-placeholder {
     font-weight: 500;
     font-size: 13px;
     line-height: 215%;
-    color: $discriptionTextColor;
+    // color: $discriptionTextColor;
     opacity: 0.7;
+
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
   }
 
   &__item:hover {
-    color: $textColor;
+    // color: $textColor;
     opacity: 1;
+
+    &_theme {
+      &_light {
+        color: $textColor;
+      }
+
+      &_dark {
+        color: $textColorDark;
+      }
+    }
   }
 
   &__item:focus {
@@ -96,7 +156,8 @@
     font-size: 13px;
     line-height: 215%;
     cursor: pointer;
-
+    background-color: inherit;
+    
     &_active {
       display: block;
     }

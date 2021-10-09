@@ -30,12 +30,33 @@ menuCloseButton.addEventListener('click', () => {
 
 
 
+// const swiper = new Swiper('.swiper', {
+//   // Optional parameters
+//   direction: 'horizontal',
+//   loop: true,
+//   speed: 2400,
+//   autoplay: true,
+//   // If we need pagination
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+
+//   // And if we need scrollbar
+//   // scrollbar: {
+//   //   el: '.swiper-scrollbar',
+//   // },
+// });
 
 
 
 
-
-const swiper = new Swiper('.swiper', {
+const swiperCoating = new Swiper('.swiper_place_coating', {
   // Optional parameters
   slidesPerView: 1,
   spaceBetween: 30,
@@ -52,6 +73,21 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.swiper__button-next',
     prevEl: '.swiper__button-prev',
   },
+});
+
+const swiperBicycles = new Swiper('.swiper_place_bicycles', {
+  // // Optional parameters
+  // slidesPerView: 1,
+  // spaceBetween: 30,
+  // direction: 'horizontal',
+  // loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  
 });
 
 
@@ -219,11 +255,11 @@ function deActiveButton() {
 // обработчик отправки формы
 function formSubmitHandler (evt) {
   evt.preventDefault();
-  console.log(formInput.placeholder);
+  
   evt.target.reset();
   // вставим новое значение в инпут
   formInput.placeholder = 'Круто!';
-  console.log(formInput.placeholder);
+  
   // скрываем кнопку отправки
   deActiveButton();
 
@@ -238,8 +274,10 @@ formInput.addEventListener('click', () => {
 formElement.addEventListener('submit', formSubmitHandler);
 
 // находим кнопки свитчера
-const lightSwitcherButton = bodyElement.querySelector('#light');
-const darkSwitcherButton = bodyElement.querySelector('#dark');
+const lightSwitcherFooterButton = bodyElement.querySelector('#light');
+const darkSwitcherFooterButton = bodyElement.querySelector('#dark');
+const lightSwitcherHeaderButton = bodyElement.querySelector('#light-header');
+const darkSwitcherHeaderButton = bodyElement.querySelector('#dark-header');
 // находим нужные нам элементы страницы
 const discriptionElements = bodyElement.querySelectorAll('.discription');
 const footerElement = bodyElement.querySelector('.footer');
@@ -247,13 +285,14 @@ const introductionCaptionElement = bodyElement.querySelector('.introduction__cap
 const merksQuoteAuthorSublineElement = bodyElement.querySelector('.merks__quote-author-subline');
 const swiperPrevButton = bodyElement.querySelector('.swiper__button-prev');
 const swiperNextButton = bodyElement.querySelector('.swiper__button-next');
-const themeSwitcherLightElement = bodyElement.querySelector('.theme-switcher__light');
-const themeSwitcherElement = bodyElement.querySelector('.theme-switcher__container');
-const themeSwitcherDarkElement = bodyElement.querySelector('.theme-switcher__dark');
+const themeSwitcherLightElements = bodyElement.querySelectorAll('.theme-switcher__light');
+const themeSwitcherElements = bodyElement.querySelectorAll('.theme-switcher__container');
+const themeSwitcherDarkElements = bodyElement.querySelectorAll('.theme-switcher__dark');
 const footerAuthorElement = bodyElement.querySelector('.footer__author');
+const closeMenuButton = bodyElement.querySelector('.menu__button-close');
 
-// обработчик клика на свитчер темной темы
-darkSwitcherButton.addEventListener('click', () => {
+// функция обработчик клика на свитчер темной темы
+function switchThemeDark() {
   bodyElement.classList.remove('page_theme_light');
   discriptionElements.forEach((element) => {
     element.classList.remove('discription_theme_light');
@@ -263,11 +302,19 @@ darkSwitcherButton.addEventListener('click', () => {
   merksQuoteAuthorSublineElement.classList.remove('merks__quote-author-subline_theme_light');
   swiperPrevButton.classList.remove('swiper__button-prev_theme_light');
   swiperNextButton.classList.remove('swiper__button-next_theme_light');
-  themeSwitcherLightElement.classList.remove('theme-switcher__light_theme_light');
-  themeSwitcherElement.classList.remove('theme-switcher__container_theme_light');
-  themeSwitcherDarkElement.classList.remove('theme-switcher__dark_theme_light');
+  themeSwitcherLightElements.forEach((element) => {
+    element.classList.remove('theme-switcher__light_theme_light');
+  });
+  themeSwitcherElements.forEach((element) => {
+    element.classList.remove('theme-switcher__container_theme_light');
+  });
+  themeSwitcherDarkElements.forEach((element) => {
+    element.classList.remove('theme-switcher__dark_theme_light');
+  });
   formInput.classList.remove('form__item_theme_light');
+  formButton.classList.remove('form__button_theme_light');
   footerAuthorElement.classList.remove('footer__author_theme_light');
+  closeMenuButton.classList.remove('menu__button-close_theme_light');
   
   bodyElement.classList.add('page_theme_dark');
   discriptionElements.forEach((element) => {
@@ -278,15 +325,23 @@ darkSwitcherButton.addEventListener('click', () => {
   merksQuoteAuthorSublineElement.classList.add('merks__quote-author-subline_theme_dark');
   swiperPrevButton.classList.add('swiper__button-prev_theme_dark');
   swiperNextButton.classList.add('swiper__button-next_theme_dark');
-  themeSwitcherLightElement.classList.add('theme-switcher__light_theme_dark');
-  themeSwitcherElement.classList.add('theme-switcher__container_theme_dark');
-  themeSwitcherDarkElement.classList.add('theme-switcher__dark_theme_dark');
+  themeSwitcherLightElements.forEach((element) => {
+    element.classList.add('theme-switcher__light_theme_dark');
+  });
+  themeSwitcherElements.forEach((element) => {
+    element.classList.add('theme-switcher__container_theme_dark');
+  });
+  themeSwitcherDarkElements.forEach((element) => {
+    element.classList.add('theme-switcher__dark_theme_dark');
+  });
   formInput.classList.add('form__item_theme_dark');
+  formButton.classList.add('form__button_theme_dark');
   footerAuthorElement.classList.add('footer__author_theme_dark');
-});
+  closeMenuButton.classList.add('menu__button-close_theme_dark');
+}
 
-// обработчик клика на свитчер светлой темы
-lightSwitcherButton.addEventListener('click', () => {
+// функция обработчик клика на свитчер светлой темы
+function switchThemeLight() {
   bodyElement.classList.remove('page_theme_dark');
   discriptionElements.forEach((element) => {
     element.classList.remove('discription_theme_dark');
@@ -296,11 +351,19 @@ lightSwitcherButton.addEventListener('click', () => {
   merksQuoteAuthorSublineElement.classList.remove('merks__quote-author-subline_theme_dark');
   swiperPrevButton.classList.remove('swiper__button-prev_theme_dark');
   swiperNextButton.classList.remove('swiper__button-next_theme_dark');
-  themeSwitcherLightElement.classList.remove('theme-switcher__light_theme_dark');
-  themeSwitcherElement.classList.remove('theme-switcher__container_theme_dark');
-  themeSwitcherDarkElement.classList.remove('theme-switcher__dark_theme_dark');
+  themeSwitcherLightElements.forEach((element) => {
+    element.classList.remove('theme-switcher__light_theme_dark');
+  });
+  themeSwitcherElements.forEach((element) => {
+    element.classList.remove('theme-switcher__container_theme_dark');
+  });
+  themeSwitcherDarkElements.forEach((element) => {
+    element.classList.remove('theme-switcher__dark_theme_dark');
+  });
   formInput.classList.remove('form__item_theme_dark');
+  formButton.classList.remove('form__button_theme_dark');
   footerAuthorElement.classList.remove('footer__author_theme_dark');
+  closeMenuButton.classList.remove('menu__button-close_theme_dark');
   
   bodyElement.classList.add('page_theme_light');
   discriptionElements.forEach((element) => {
@@ -311,11 +374,131 @@ lightSwitcherButton.addEventListener('click', () => {
   merksQuoteAuthorSublineElement.classList.add('merks__quote-author-subline_theme_light');
   swiperPrevButton.classList.add('swiper__button-prev_theme_light');
   swiperNextButton.classList.add('swiper__button-next_theme_light');
-  themeSwitcherLightElement.classList.add('theme-switcher__light_theme_light');
-  themeSwitcherElement.classList.add('theme-switcher__container_theme_light');
-  themeSwitcherDarkElement.classList.add('theme-switcher__dark_theme_light');
+  themeSwitcherLightElements.forEach((element) => {
+    element.classList.add('theme-switcher__light_theme_light');
+  });
+  themeSwitcherElements.forEach((element) => {
+    element.classList.add('theme-switcher__container_theme_light');
+  });
+  themeSwitcherDarkElements.forEach((element) => {
+    element.classList.add('theme-switcher__dark_theme_light');
+  });
   formInput.classList.add('form__item_theme_light');
+  formButton.classList.add('form__button_theme_light');
   footerAuthorElement.classList.add('footer__author_theme_light');
+  closeMenuButton.classList.add('menu__button-close_theme_light');
+}
+
+darkSwitcherFooterButton.addEventListener('click', () => {
+  switchThemeDark();
 });
+darkSwitcherHeaderButton.addEventListener('click', () => {
+  switchThemeDark();
+});
+lightSwitcherFooterButton.addEventListener('click', () => {
+  switchThemeLight();
+});
+lightSwitcherHeaderButton.addEventListener('click', () => {
+  switchThemeLight();
+});
+
+
+
+
+
+
+// обработчик клика на свитчер темной темы
+// darkSwitcherFooterButton.addEventListener('click', () => {
+//   bodyElement.classList.remove('page_theme_light');
+//   discriptionElements.forEach((element) => {
+//     element.classList.remove('discription_theme_light');
+//   });
+//   footerElement.classList.remove('footer_theme_light');
+//   introductionCaptionElement.classList.remove('introduction__caption_theme_light');
+//   merksQuoteAuthorSublineElement.classList.remove('merks__quote-author-subline_theme_light');
+//   swiperPrevButton.classList.remove('swiper__button-prev_theme_light');
+//   swiperNextButton.classList.remove('swiper__button-next_theme_light');
+//   themeSwitcherLightElements.forEach((element) => {
+//     element.classList.remove('theme-switcher__light_theme_light');
+//   });
+//   themeSwitcherElements.forEach((element) => {
+//     element.classList.remove('theme-switcher__container_theme_light');
+//   });
+//   themeSwitcherDarkElements.forEach((element) => {
+//     element.classList.remove('theme-switcher__dark_theme_light');
+//   });
+//   formInput.classList.remove('form__item_theme_light');
+//   formButton.classList.remove('form__button_theme_light');
+//   footerAuthorElement.classList.remove('footer__author_theme_light');
+  
+//   bodyElement.classList.add('page_theme_dark');
+//   discriptionElements.forEach((element) => {
+//     element.classList.add('discription_theme_dark');
+//   });
+//   footerElement.classList.add('footer_theme_dark');
+//   introductionCaptionElement.classList.add('introduction__caption_theme_dark');
+//   merksQuoteAuthorSublineElement.classList.add('merks__quote-author-subline_theme_dark');
+//   swiperPrevButton.classList.add('swiper__button-prev_theme_dark');
+//   swiperNextButton.classList.add('swiper__button-next_theme_dark');
+//   themeSwitcherLightElements.forEach((element) => {
+//     element.classList.add('theme-switcher__light_theme_dark');
+//   });
+//   themeSwitcherElements.forEach((element) => {
+//     element.classList.add('theme-switcher__container_theme_dark');
+//   });
+//   themeSwitcherDarkElements.forEach((element) => {
+//     element.classList.add('theme-switcher__dark_theme_dark');
+//   });
+//   formInput.classList.add('form__item_theme_dark');
+//   formButton.classList.add('form__button_theme_dark');
+//   footerAuthorElement.classList.add('footer__author_theme_dark');
+// });
+
+// обработчик клика на свитчер светлой темы
+// lightSwitcherButton.addEventListener('click', () => {
+//   bodyElement.classList.remove('page_theme_dark');
+//   discriptionElements.forEach((element) => {
+//     element.classList.remove('discription_theme_dark');
+//   });
+//   footerElement.classList.remove('footer_theme_dark');
+//   introductionCaptionElement.classList.remove('introduction__caption_theme_dark');
+//   merksQuoteAuthorSublineElement.classList.remove('merks__quote-author-subline_theme_dark');
+//   swiperPrevButton.classList.remove('swiper__button-prev_theme_dark');
+//   swiperNextButton.classList.remove('swiper__button-next_theme_dark');
+//   themeSwitcherLightElements.forEach((element) => {
+//     element.classList.remove('theme-switcher__light_theme_dark');
+//   });
+//   themeSwitcherElements.forEach((element) => {
+//     element.classList.remove('theme-switcher__container_theme_dark');
+//   });
+//   themeSwitcherDarkElements.forEach((element) => {
+//     element.classList.remove('theme-switcher__dark_theme_dark');
+//   });
+//   formInput.classList.remove('form__item_theme_dark');
+//   formButton.classList.remove('form__button_theme_dark');
+//   footerAuthorElement.classList.remove('footer__author_theme_dark');
+  
+//   bodyElement.classList.add('page_theme_light');
+//   discriptionElements.forEach((element) => {
+//     element.classList.add('discription_theme_light');
+//   });
+//   footerElement.classList.add('footer_theme_light');
+//   introductionCaptionElement.classList.add('introduction__caption_theme_light');
+//   merksQuoteAuthorSublineElement.classList.add('merks__quote-author-subline_theme_light');
+//   swiperPrevButton.classList.add('swiper__button-prev_theme_light');
+//   swiperNextButton.classList.add('swiper__button-next_theme_light');
+//   themeSwitcherLightElements.forEach((element) => {
+//     element.classList.add('theme-switcher__light_theme_light');
+//   });
+//   themeSwitcherElements.forEach((element) => {
+//     element.classList.add('theme-switcher__container_theme_light');
+//   });
+//   themeSwitcherDarkElements.forEach((element) => {
+//     element.classList.add('theme-switcher__dark_theme_light');
+//   });
+//   formInput.classList.add('form__item_theme_light');
+//   formButton.classList.add('form__button_theme_light');
+//   footerAuthorElement.classList.add('footer__author_theme_light');
+// });
 
 

@@ -2,20 +2,26 @@
   min-height: 74px;
   @include flex();
   max-width: 1440px;
+  min-width: 320px;
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 10;
   background-color: inherit;
+  // padding-right: auto;
+  box-sizing: border-box;
+  margin: 0 auto;
   
   &__nav {
-    margin-right: 120px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 600px) {
   .header {
     &__nav {
       display: none;
