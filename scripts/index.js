@@ -6,55 +6,33 @@ const menuElement = bodyElement.querySelector('.menu');
 const menuButton = bodyElement.querySelector('.button-menu');
 // находим кнопку закрытия меню
 const menuCloseButton = bodyElement.querySelector('.menu__button-close');
-
-// функция открытия меню
-function openMenu() {
-  menuElement.classList.add('menu_opened');
-}
-
-// функция закрытия меню
-function closeMenu() {
-  menuElement.classList.remove('menu_opened');
-}
-
-// обработчик клика по кнопке меню
-menuButton.addEventListener('click', () => {
-  openMenu();
-});
-
-// обработчик клика по кнопке закрытия меню
-menuCloseButton.addEventListener('click', () => {
-  closeMenu();
-});
-
-
-
-
-// const swiper = new Swiper('.swiper', {
-//   // Optional parameters
-//   direction: 'horizontal',
-//   loop: true,
-//   speed: 2400,
-//   autoplay: true,
-//   // If we need pagination
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-
-//   // And if we need scrollbar
-//   // scrollbar: {
-//   //   el: '.swiper-scrollbar',
-//   // },
-// });
-
-
-
+// находим список с велосипедами
+const bicyclesContainers = bodyElement.querySelectorAll('.bicycles__list');
+// находим список ссылок, по которым меняется список велосипедов
+const bicyclesLinks = bodyElement.querySelectorAll('.bicycles__link');
+// находим форму
+const formElement = bodyElement.querySelector('.form');
+// находим поле ввода
+const formInput = bodyElement.querySelector('.form__item');
+// находим кнопку отправки формы
+const formButton = bodyElement.querySelector('.form__button');
+// находим кнопки свитчера
+const lightSwitcherFooterButton = bodyElement.querySelector('#light');
+const darkSwitcherFooterButton = bodyElement.querySelector('#dark');
+const lightSwitcherHeaderButton = bodyElement.querySelector('#light-header');
+const darkSwitcherHeaderButton = bodyElement.querySelector('#dark-header');
+// находим нужные нам элементы страницы
+const discriptionElements = bodyElement.querySelectorAll('.discription');
+const footerElement = bodyElement.querySelector('.footer');
+const introductionCaptionElement = bodyElement.querySelector('.introduction__caption');
+const merksQuoteAuthorSublineElement = bodyElement.querySelector('.merks__quote-author-subline');
+const swiperPrevButton = bodyElement.querySelector('.swiper__button-prev');
+const swiperNextButton = bodyElement.querySelector('.swiper__button-next');
+const themeSwitcherLightElements = bodyElement.querySelectorAll('.theme-switcher__light');
+const themeSwitcherElements = bodyElement.querySelectorAll('.theme-switcher__container');
+const themeSwitcherDarkElements = bodyElement.querySelectorAll('.theme-switcher__dark');
+const footerAuthorElement = bodyElement.querySelector('.footer__author');
+const closeMenuButton = bodyElement.querySelector('.menu__button-close');
 
 const swiperCoating = new Swiper('.swiper_place_coating', {
   // Optional parameters
@@ -63,18 +41,12 @@ const swiperCoating = new Swiper('.swiper_place_coating', {
   direction: 'horizontal',
   loop: true,
 
-  // If we need pagination
-  // pagination: {
-  //   el: '.swiper-pagination',
-  // },
-
   // Navigation arrows
   navigation: {
     nextEl: '.swiper__button-next',
     prevEl: '.swiper__button-prev',
   },
 });
-
 
 const swiperBicycles = new Swiper('.swiper_place_bicycles', {
   // // Optional parameters
@@ -87,49 +59,7 @@ const swiperBicycles = new Swiper('.swiper_place_bicycles', {
   pagination: {
     el: '.swiper__pagination',
   },
-
-  
 });
-
-
-// const slider = document.querySelector('.swiper-container');
-
-// function mobileSlider() {
-//   if (window.innerWidth <= 768 && slider.dataset.mobile == 'false') {
-//     mySwiper = new Swiper(slider, {
-//       slidesPerView: 1,
-//       spaceBetween: 20,
-//       loop: true,
-//       slideClass: 'card',
-//       pagination: {
-//        	el: '.swiper-pagination',
-//           clickable: true,
-//             },
-           
-//     });
-
-//     slider.dataset.mobile = 'true';
-//   }
-
-//   if (window.innerWidth > 768) {
-//     slider.dataset.mobile = 'false';
-//     if (slider.classList.contains('swiper-container-initialized')) {
-//       mySwiper.destroy();
-//     }
-//   }
-// }
-
-// mobileSlider()
-
-// window.addEventListener('resize', () => {
-//   mobileSlider();
-// });
-
-
-
-
-
-
 
 // готовый массив с велосипедами шоссе
 const initialBicyclesRoad = [
@@ -185,12 +115,16 @@ const initialBicyclesTriathlon = [
     link: 'https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q'
   }
 ];
-// находим список с велосипедами
-const bicyclesContainers = bodyElement.querySelectorAll('.bicycles__list');
 
+// функция открытия меню
+function openMenu() {
+  menuElement.classList.add('menu_opened');
+}
 
-
-
+// функция закрытия меню
+function closeMenu() {
+  menuElement.classList.remove('menu_opened');
+}
 
 // функция добавления велосипедов
 function addBicycles(name, src, link) {
@@ -234,18 +168,6 @@ function searchArray(array) {
   });
 }
 
-
-
-
-
-
-
-
-
-
-// находим список ссылок, по которым меняется список велосипедов
-const bicyclesLinks = bodyElement.querySelectorAll('.bicycles__link');
-
 // функция обнуления ссылок
 function inactiveLink(link) {
   bicyclesLinks.forEach((element) => {
@@ -268,9 +190,7 @@ function linkHandler(link) {
     inactiveLink(eventTarget);
     // активируем нужную ссылку
     actionLink(eventTarget);
-
     deleteBicycles();
-
     if ((eventTarget.textContent) === 'Шоссе') {
       searchArray(initialBicyclesRoad);
     } else if ((eventTarget.textContent) === 'Грэвел') {
@@ -281,24 +201,6 @@ function linkHandler(link) {
   });
 }
 
-searchArray(initialBicyclesRoad);
-
-
-// добавляем обработчик клика по ссылкам
-bicyclesLinks.forEach((element) => {
-  linkHandler(element);
-  
-});
-
-
-
-// находим форму
-const formElement = bodyElement.querySelector('.form');
-// находим поле ввода
-const formInput = bodyElement.querySelector('.form__item');
-// находим кнопку отправки формы
-const formButton = bodyElement.querySelector('.form__button');
-
 // функция активации кнопки отправки формы
 function activeButton() {
   formButton.classList.add('form__button_active');
@@ -308,45 +210,6 @@ function activeButton() {
 function deActiveButton() {
   formButton.classList.remove('form__button_active');
 }
-
-// обработчик отправки формы
-function formSubmitHandler (evt) {
-  evt.preventDefault();
-  
-  evt.target.reset();
-  // вставим новое значение в инпут
-  formInput.placeholder = 'Круто!';
-  
-  // скрываем кнопку отправки
-  deActiveButton();
-
-}
-
-// добавляем обработчик клика на форму
-formInput.addEventListener('click', () => {
-  activeButton();
-});
-
-// Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', formSubmitHandler);
-
-// находим кнопки свитчера
-const lightSwitcherFooterButton = bodyElement.querySelector('#light');
-const darkSwitcherFooterButton = bodyElement.querySelector('#dark');
-const lightSwitcherHeaderButton = bodyElement.querySelector('#light-header');
-const darkSwitcherHeaderButton = bodyElement.querySelector('#dark-header');
-// находим нужные нам элементы страницы
-const discriptionElements = bodyElement.querySelectorAll('.discription');
-const footerElement = bodyElement.querySelector('.footer');
-const introductionCaptionElement = bodyElement.querySelector('.introduction__caption');
-const merksQuoteAuthorSublineElement = bodyElement.querySelector('.merks__quote-author-subline');
-const swiperPrevButton = bodyElement.querySelector('.swiper__button-prev');
-const swiperNextButton = bodyElement.querySelector('.swiper__button-next');
-const themeSwitcherLightElements = bodyElement.querySelectorAll('.theme-switcher__light');
-const themeSwitcherElements = bodyElement.querySelectorAll('.theme-switcher__container');
-const themeSwitcherDarkElements = bodyElement.querySelectorAll('.theme-switcher__dark');
-const footerAuthorElement = bodyElement.querySelector('.footer__author');
-const closeMenuButton = bodyElement.querySelector('.menu__button-close');
 
 // функция обработчик клика на свитчер темной темы
 function switchThemeDark() {
@@ -446,6 +309,41 @@ function switchThemeLight() {
   closeMenuButton.classList.add('menu__button-close_theme_light');
 }
 
+// обработчик отправки формы
+function formSubmitHandler (evt) {
+  evt.preventDefault();
+  evt.target.reset();
+  // вставим новое значение в инпут
+  formInput.placeholder = 'Круто!';
+  // скрываем кнопку отправки
+  deActiveButton();
+}
+
+// обработчик клика по кнопке меню
+menuButton.addEventListener('click', () => {
+  openMenu();
+});
+
+// обработчик клика по кнопке закрытия меню
+menuCloseButton.addEventListener('click', () => {
+  closeMenu();
+});
+
+searchArray(initialBicyclesRoad);
+
+// добавляем обработчик клика по ссылкам
+bicyclesLinks.forEach((element) => {
+  linkHandler(element);
+});
+
+// добавляем обработчик клика на форму
+formInput.addEventListener('click', () => {
+  activeButton();
+});
+
+// Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
+formElement.addEventListener('submit', formSubmitHandler);
+
 darkSwitcherFooterButton.addEventListener('click', () => {
   switchThemeDark();
 });
@@ -458,25 +356,3 @@ lightSwitcherFooterButton.addEventListener('click', () => {
 lightSwitcherHeaderButton.addEventListener('click', () => {
   switchThemeLight();
 });
-
-
-// const bicyclesButton = bodyElement.querySelector('.bicycles__button');
-// const navigationElement = bodyElement.querySelector('.bicycles__nav');
-
-// if (window.innerWidth <= 740) {
-//   navigationElement.setAttribute('display', 'none');
-// };
-
-// bicyclesButton.addEventListener('click', () => {
-//   navigationElement.removeAttribute('display');
-//   console.log(navigationElement.hasAttribute('display'));
-//   // navigationElement.hasAttribute('display');
-//   navigationElement.setAttribute('display', 'block');
-//   console.log(navigationElement.getAttribute('display'));
-//   console.log(navigationElement);
-// });
-
-
-
-
-
