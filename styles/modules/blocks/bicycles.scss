@@ -137,7 +137,7 @@
 @media all and (max-width: 740px) {
   .bicycles {
     padding-top: 0;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 
     &__container {
       margin-top: 20px;
@@ -151,7 +151,7 @@
     }
 
     &__nav {
-      // display: none;
+      display: none;
     }
 
     &__list {
@@ -168,17 +168,25 @@
       width: 100%;
     }
 
+    &__card {
+      @include flex($align: center, $justify: center);
+      width: 100%;
+    }
+      
+    
+
     &__image {
       
       max-width: 284px;
-      // width: 100%;
+      width: 100%;
       // object-fit: cover;
       padding: 15px 15px 37px;
       // display: block;
       // object-position: center;
       border-radius: 20px;
-      background-color: $buttonTextColor; 
+      background-color: $buttonTextColor;
       filter: none;
+      margin: auto;
       
     }
 

@@ -7,7 +7,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 1fr 1fr;
   align-items: start;
-  max-height: 460px;
+  // max-height: 460px;
 
   
 
@@ -70,11 +70,16 @@
     padding-bottom: 60px;
     @include flex();
     flex-direction: column;
-    gap: 40px;
+    gap: 0;
 
     &__item {
-      margin-top: 0;
+      margin-top: 20px;
+      margin-bottom: 40px;
       align-self: flex-start;
+    }
+
+    &__image {
+      margin-bottom: 20px;
     }
   }
 }

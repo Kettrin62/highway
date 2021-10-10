@@ -528,25 +528,16 @@ template {
 }
 
 .introduction {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 230px 160px 50px 1fr;
   width: 100%;
   padding-top: 20px;
   -moz-column-gap: 20px;
        column-gap: 20px;
   max-width: 1440px;
   position: relative;
-  max-height: 856px;
   box-sizing: border-box;
-}
-.introduction__container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 100%;
-  gap: 50px;
 }
 .introduction__item {
   padding-top: 60px;
@@ -617,34 +608,32 @@ template {
 }
 .introduction__image {
   max-width: 610px;
-  width: 50%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   grid-column: 2/3;
   grid-row: 1/5;
   height: 100%;
   max-height: 836px;
-  align-self: flex-end;
+  justify-self: end;
 }
 
 @media all and (max-width: 1000px) {
+  .introduction {
+    grid-template-rows: 160px 160px 50px 1fr;
+    line-height: 150%;
+  }
   .introduction__item {
     padding-top: 20px;
   }
   .introduction__caption {
-    margin-top: 0;
-    font-size: 14px;
-  }
-}
-@media all and (max-width: 750px) {
-  .introduction__caption {
     display: none;
   }
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   .introduction {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
     gap: 40px;
@@ -706,8 +695,6 @@ template {
 @media all and (max-width: 1000px) {
   .discription {
     font-size: 16px;
-    line-height: 150%;
-    max-width: 284px;
   }
 }
 @media all and (max-width: 700px) {
@@ -722,11 +709,13 @@ template {
   z-index: 5;
   right: 0;
   top: 0;
-  height: calc(100% - 79px);
+  height: calc(100vw - 79px);
+  height: 100%;
+  width: 56.25%;
 }
 .fix__container {
   width: 810px;
-  height: 347px;
+  height: calc(100vw * .24);
 }
 .fix__container:last-of-type {
   height: 79px;
@@ -736,8 +725,8 @@ template {
 .fix__image {
   position: sticky;
   top: 74px;
-  width: 340px;
-  height: 260px;
+  max-width: 340px;
+  width: calc((100% - 100px)/2);
   padding: 20px 50px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -756,7 +745,6 @@ template {
   padding-top: 120px;
   padding-bottom: 60px;
   max-width: 1200px;
-  max-height: 460px;
   align-items: end;
 }
 .merks__image {
@@ -986,7 +974,7 @@ template {
   }
   .swiper__button-prev {
     top: 9px;
-    right: 37px;
+    right: calc(25%/3 + 37px);
     left: auto;
     width: 24px;
     height: 24px;
@@ -999,7 +987,7 @@ template {
   }
   .swiper__button-next {
     top: 9px;
-    right: 0;
+    right: calc(25%/3);
     left: auto;
     width: 24px;
     height: 24px;
@@ -1015,11 +1003,20 @@ template {
     margin-top: 17px;
   }
   .swiper_place_coating {
-    height: 425px;
+    min-height: 425px;
+    height: 100%;
   }
   .swiper_place_bicycles {
     display: block;
     margin-top: 0;
+  }
+}
+@media all and (max-width: 610px) {
+  .swiper__button-prev {
+    right: 37px;
+  }
+  .swiper__button-next {
+    right: 0;
   }
 }
 .bicycles {
@@ -1144,7 +1141,7 @@ template {
 @media all and (max-width: 740px) {
   .bicycles {
     padding-top: 0;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
   }
   .bicycles__container {
     margin-top: 20px;
@@ -1154,6 +1151,9 @@ template {
   }
   .bicycles__button {
     display: block;
+  }
+  .bicycles__nav {
+    display: none;
   }
   .bicycles__list {
     margin-top: 20px;
@@ -1166,12 +1166,20 @@ template {
     height: 306px;
     width: 100%;
   }
+  .bicycles__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
   .bicycles__image {
     max-width: 284px;
+    width: 100%;
     padding: 15px 15px 37px;
     border-radius: 20px;
     background-color: #fff;
     filter: none;
+    margin: auto;
   }
   .bicycles__caption {
     margin-top: 0;
@@ -1192,7 +1200,6 @@ template {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 1fr 1fr;
   align-items: start;
-  max-height: 460px;
 }
 .training__links {
   display: flex;
@@ -1240,11 +1247,15 @@ template {
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    gap: 40px;
+    gap: 0;
   }
   .training__item {
-    margin-top: 0;
+    margin-top: 20px;
+    margin-bottom: 40px;
     align-self: flex-start;
+  }
+  .training__image {
+    margin-bottom: 20px;
   }
 }
 .footer {

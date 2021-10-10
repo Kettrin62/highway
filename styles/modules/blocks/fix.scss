@@ -3,11 +3,15 @@
   z-index: 5;
   right: 0;
   top: 0;
-  height: calc(100% - 79px);
+  height: calc(100vw - 79px);
+  height: 100%;
+  width: 56.25%;
+  
+
   
   // @include wh($w: 440px, $h: 300px);
   &__container {
-    @include wh(810px, 347px);
+    @include wh(810px, calc(100vw * .24));
 
     &:last-of-type {
       height: 79px;
@@ -22,7 +26,9 @@
   &__image {
     position: sticky;
     top: 74px;
-    @include wh($w: 340px, $h: 260px);
+    // @include wh($w: 340px, $h: 260px);
+    max-width: 340px;
+    width: calc((100% - 100px)/2);
     padding: 20px 50px;
     object-fit: cover;
 

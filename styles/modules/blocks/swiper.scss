@@ -152,8 +152,10 @@
 
     &__button-prev {
       top: 9px;
-      right: 37px;
+      
+      right: calc(25%/3 + 37px);
       left: auto;
+    
       
       @include wh(24px, 24px);
       
@@ -169,17 +171,13 @@
 
     &__button-next {
       top: 9px;
-      right: 0;
+      right: calc(25%/3);
       left: auto;
-      
-      
       @include wh(24px, 24px);
       
       &::after {
-        
         width: 24px;
         height: 24px;
-        
         border-radius: 30px;
         background-size: 4.5px 10px;
       }
@@ -188,24 +186,29 @@
     &__pagination {
       margin-left: calc((100% - 50px)/2);
       margin-top: 17px;
-
-      
     }
 
     &_place {
       &_coating {
-        height: 425px;
+        min-height: 425px;
+        height: 100%;
       }
       &_bicycles {
         display: block;
         margin-top: 0;
       }
-      
     }
   }
 }
 
+@media all and (max-width: 610px) {
+  .swiper {
+    &__button-prev {
+      right: 37px;
+    }
 
-
-
-
+    &__button-next {
+      right: 0;
+    }
+  }
+}
