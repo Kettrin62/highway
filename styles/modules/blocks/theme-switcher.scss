@@ -4,8 +4,6 @@
 
   &__light {
     @include wh(28px, 28px);
-
-    // background-image: url(../images/theme-switcher-light.svg);
     background-size: 28px 28px;
     background-repeat: no-repeat;
     background-position: center;
@@ -52,7 +50,7 @@
 
   &__visible-button {
     display: inline-block;
-    vertical-align: middle; /* элемент и текст будут правильно выровнены по вертикали. Работает в паре с inline-block */
+    vertical-align: middle;
     @include wh(20px, 20px);
     cursor: pointer;
     border-radius: 50%;

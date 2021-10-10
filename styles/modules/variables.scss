@@ -36,8 +36,6 @@ $theme-dark-colors: (
   'secondaryColor': #2f2f2f,
 );
 
-
-
 $color: #fff;
 $fontFamily: 'Inter', Arial, sans-serif;
 
@@ -48,8 +46,6 @@ $fontFamily: 'Inter', Arial, sans-serif;
 @function theme-dark-color($key) {
   @return map-get($theme-dark-colors, $key);
 }
-
-
 
 $backgroundColor: theme-light-color('primaryColor');
 $textColor: theme-light-color('primaryTextColor');
@@ -76,12 +72,3 @@ $swiperButtonColorDark: theme-dark-color('slideColor');
 $switcherColorDark: theme-dark-color('footerElementColor-switcherColor');
 $lineColorDark: theme-dark-color('lineColor');
 $lineMobileColor: #e3e3e3;
-
-// $buttonBackgroundColor: theme-light-color('buttonColor');
-// $buttonColorHover: theme-light-color('buttonColor-active');
-
-
-
-
-// $imageBackgroundColorColor: theme-light-color('imageColor');
-

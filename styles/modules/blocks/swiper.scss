@@ -1,7 +1,4 @@
 .swiper {
-  // @include wh(100%, 802px);
-  
-
   &__item {
     margin-bottom: 50px;
   }
@@ -19,7 +16,6 @@
     object-fit: cover;
     width: 100%;
     margin-top: 30px;
-    
   }
 
   &__icon {
@@ -110,11 +106,9 @@
     }
 
     &_bicycles {
-      
       display: none;
     }
   }
-  
 }
 
 @media all and (max-width: 740px) {
@@ -152,18 +146,13 @@
 
     &__button-prev {
       top: 9px;
-      
       right: calc(25%/3 + 37px);
       left: auto;
-    
-      
       @include wh(24px, 24px);
       
       &::after {
-        
         width: 24px;
         height: 24px;
-        
         border-radius: 30px;
         background-size: 4.5px 10px;
       }

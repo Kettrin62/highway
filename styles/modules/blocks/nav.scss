@@ -1,8 +1,6 @@
 .nav {
   &__links {
-    
     @include flex();
-    
     list-style-type: none;
     @include mp();
 

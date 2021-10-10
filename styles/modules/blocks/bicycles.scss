@@ -1,5 +1,4 @@
 .bicycles {
-  // padding: 60px 0;
   padding-top: 60px;
   padding-bottom: 60px;
   max-width: 1440px;
@@ -24,7 +23,6 @@
     line-height: 127%;
     border: 1px solid $lineMobileColor;
     background-color: $backgroundColor;
-    
     border-radius: 2px;
   }
 
@@ -33,7 +31,6 @@
     gap: 40px;
     list-style-type: none;
     @include mp();
-    
   }
 
   &__link {
@@ -60,7 +57,6 @@
     gap: 30px;
     list-style-type: none;
     @include mp($m: 120px 0 0);
-    
   }
 
   &__list-item {
@@ -76,7 +72,6 @@
     font-weight: 600;
     display: block;
     cursor: pointer;
-    
   }
 
   &__card {
@@ -84,24 +79,19 @@
     display: block;
     border-radius: 20px;
     position: relative;
-    
-
   }
 
   &__image {
-    // @include wh($w: 340px, $h: 340px);
     max-width: 380px;
     width: 100%;
     object-fit: cover;
     padding: 20px;
     display: block;
     object-position: center;
-    // background-size: 380px, 280px;
     border-radius: 20px;
     background-color: $backgroundColor;
     filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
     box-sizing: border-box;
-    
   }
 
   &__caption {
@@ -110,10 +100,7 @@
     font-size: 18px;
     line-height: 122%;
     font-weight: 600;
-    
   }
-
-  
 }
 
 @media all and (max-width: 800px) {
@@ -129,7 +116,6 @@
       font-size: 14px;
       line-height: 129%;
       font-weight: 600;
-      
     }
   }
 }
@@ -179,19 +165,14 @@
       
       max-width: 284px;
       width: 100%;
-      // object-fit: cover;
       padding: 15px 15px 37px;
-      // display: block;
-      // object-position: center;
       border-radius: 20px;
       background-color: $buttonTextColor;
       filter: none;
       margin: auto;
-      
     }
 
     &__caption {
-      
       margin-top: 0;
       text-align: center;
       position: absolute;
@@ -199,7 +180,5 @@
       left: calc((100% - 140px)/2);
       z-index: 2;
     }
-
   }
 }
-
