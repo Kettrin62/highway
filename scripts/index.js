@@ -75,20 +75,57 @@ const swiperCoating = new Swiper('.swiper_place_coating', {
   },
 });
 
+
 const swiperBicycles = new Swiper('.swiper_place_bicycles', {
   // // Optional parameters
-  // slidesPerView: 1,
-  // spaceBetween: 30,
-  // direction: 'horizontal',
-  // loop: true,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  direction: 'horizontal',
+  loop: true,
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: '.swiper__pagination',
   },
 
   
 });
+
+
+// const slider = document.querySelector('.swiper-container');
+
+// function mobileSlider() {
+//   if (window.innerWidth <= 768 && slider.dataset.mobile == 'false') {
+//     mySwiper = new Swiper(slider, {
+//       slidesPerView: 1,
+//       spaceBetween: 20,
+//       loop: true,
+//       slideClass: 'card',
+//       pagination: {
+//        	el: '.swiper-pagination',
+//           clickable: true,
+//             },
+           
+//     });
+
+//     slider.dataset.mobile = 'true';
+//   }
+
+//   if (window.innerWidth > 768) {
+//     slider.dataset.mobile = 'false';
+//     if (slider.classList.contains('swiper-container-initialized')) {
+//       mySwiper.destroy();
+//     }
+//   }
+// }
+
+// mobileSlider()
+
+// window.addEventListener('resize', () => {
+//   mobileSlider();
+// });
+
+
 
 
 
@@ -149,7 +186,11 @@ const initialBicyclesTriathlon = [
   }
 ];
 // находим список с велосипедами
-const bicyclesContainer = bodyElement.querySelector('.bicycles__list');
+const bicyclesContainers = bodyElement.querySelectorAll('.bicycles__list');
+
+
+
+
 
 // функция добавления велосипедов
 function addBicycles(name, src, link) {
@@ -183,9 +224,24 @@ function searchArray(array) {
     // вызываем функцию addCard
     const bicyclesItem = addBicycles(item.name, item.src, item.link);
     // добавим элемент в конец контейнера со списком
-    bicyclesContainer.append(bicyclesItem);
+    // bicyclesContainers[0].append(bicyclesItem);
+    // bicyclesContainers[1].append(bicyclesItem);
+    if (window.innerWidth <= 740) {
+      bicyclesContainers[1].append(bicyclesItem);
+    } else {
+      bicyclesContainers[0].append(bicyclesItem);
+    };
   });
 }
+
+
+
+
+
+
+
+
+
 
 // находим список ссылок, по которым меняется список велосипедов
 const bicyclesLinks = bodyElement.querySelectorAll('.bicycles__link');
@@ -226,6 +282,7 @@ function linkHandler(link) {
 }
 
 searchArray(initialBicyclesRoad);
+
 
 // добавляем обработчик клика по ссылкам
 bicyclesLinks.forEach((element) => {
@@ -403,102 +460,23 @@ lightSwitcherHeaderButton.addEventListener('click', () => {
 });
 
 
+// const bicyclesButton = bodyElement.querySelector('.bicycles__button');
+// const navigationElement = bodyElement.querySelector('.bicycles__nav');
 
+// if (window.innerWidth <= 740) {
+//   navigationElement.setAttribute('display', 'none');
+// };
 
-
-
-// обработчик клика на свитчер темной темы
-// darkSwitcherFooterButton.addEventListener('click', () => {
-//   bodyElement.classList.remove('page_theme_light');
-//   discriptionElements.forEach((element) => {
-//     element.classList.remove('discription_theme_light');
-//   });
-//   footerElement.classList.remove('footer_theme_light');
-//   introductionCaptionElement.classList.remove('introduction__caption_theme_light');
-//   merksQuoteAuthorSublineElement.classList.remove('merks__quote-author-subline_theme_light');
-//   swiperPrevButton.classList.remove('swiper__button-prev_theme_light');
-//   swiperNextButton.classList.remove('swiper__button-next_theme_light');
-//   themeSwitcherLightElements.forEach((element) => {
-//     element.classList.remove('theme-switcher__light_theme_light');
-//   });
-//   themeSwitcherElements.forEach((element) => {
-//     element.classList.remove('theme-switcher__container_theme_light');
-//   });
-//   themeSwitcherDarkElements.forEach((element) => {
-//     element.classList.remove('theme-switcher__dark_theme_light');
-//   });
-//   formInput.classList.remove('form__item_theme_light');
-//   formButton.classList.remove('form__button_theme_light');
-//   footerAuthorElement.classList.remove('footer__author_theme_light');
-  
-//   bodyElement.classList.add('page_theme_dark');
-//   discriptionElements.forEach((element) => {
-//     element.classList.add('discription_theme_dark');
-//   });
-//   footerElement.classList.add('footer_theme_dark');
-//   introductionCaptionElement.classList.add('introduction__caption_theme_dark');
-//   merksQuoteAuthorSublineElement.classList.add('merks__quote-author-subline_theme_dark');
-//   swiperPrevButton.classList.add('swiper__button-prev_theme_dark');
-//   swiperNextButton.classList.add('swiper__button-next_theme_dark');
-//   themeSwitcherLightElements.forEach((element) => {
-//     element.classList.add('theme-switcher__light_theme_dark');
-//   });
-//   themeSwitcherElements.forEach((element) => {
-//     element.classList.add('theme-switcher__container_theme_dark');
-//   });
-//   themeSwitcherDarkElements.forEach((element) => {
-//     element.classList.add('theme-switcher__dark_theme_dark');
-//   });
-//   formInput.classList.add('form__item_theme_dark');
-//   formButton.classList.add('form__button_theme_dark');
-//   footerAuthorElement.classList.add('footer__author_theme_dark');
+// bicyclesButton.addEventListener('click', () => {
+//   navigationElement.removeAttribute('display');
+//   console.log(navigationElement.hasAttribute('display'));
+//   // navigationElement.hasAttribute('display');
+//   navigationElement.setAttribute('display', 'block');
+//   console.log(navigationElement.getAttribute('display'));
+//   console.log(navigationElement);
 // });
 
-// обработчик клика на свитчер светлой темы
-// lightSwitcherButton.addEventListener('click', () => {
-//   bodyElement.classList.remove('page_theme_dark');
-//   discriptionElements.forEach((element) => {
-//     element.classList.remove('discription_theme_dark');
-//   });
-//   footerElement.classList.remove('footer_theme_dark');
-//   introductionCaptionElement.classList.remove('introduction__caption_theme_dark');
-//   merksQuoteAuthorSublineElement.classList.remove('merks__quote-author-subline_theme_dark');
-//   swiperPrevButton.classList.remove('swiper__button-prev_theme_dark');
-//   swiperNextButton.classList.remove('swiper__button-next_theme_dark');
-//   themeSwitcherLightElements.forEach((element) => {
-//     element.classList.remove('theme-switcher__light_theme_dark');
-//   });
-//   themeSwitcherElements.forEach((element) => {
-//     element.classList.remove('theme-switcher__container_theme_dark');
-//   });
-//   themeSwitcherDarkElements.forEach((element) => {
-//     element.classList.remove('theme-switcher__dark_theme_dark');
-//   });
-//   formInput.classList.remove('form__item_theme_dark');
-//   formButton.classList.remove('form__button_theme_dark');
-//   footerAuthorElement.classList.remove('footer__author_theme_dark');
-  
-//   bodyElement.classList.add('page_theme_light');
-//   discriptionElements.forEach((element) => {
-//     element.classList.add('discription_theme_light');
-//   });
-//   footerElement.classList.add('footer_theme_light');
-//   introductionCaptionElement.classList.add('introduction__caption_theme_light');
-//   merksQuoteAuthorSublineElement.classList.add('merks__quote-author-subline_theme_light');
-//   swiperPrevButton.classList.add('swiper__button-prev_theme_light');
-//   swiperNextButton.classList.add('swiper__button-next_theme_light');
-//   themeSwitcherLightElements.forEach((element) => {
-//     element.classList.add('theme-switcher__light_theme_light');
-//   });
-//   themeSwitcherElements.forEach((element) => {
-//     element.classList.add('theme-switcher__container_theme_light');
-//   });
-//   themeSwitcherDarkElements.forEach((element) => {
-//     element.classList.add('theme-switcher__dark_theme_light');
-//   });
-//   formInput.classList.add('form__item_theme_light');
-//   formButton.classList.add('form__button_theme_light');
-//   footerAuthorElement.classList.add('footer__author_theme_light');
-// });
+
+
 
 

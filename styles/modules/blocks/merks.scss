@@ -84,3 +84,22 @@
     }
   }
 }
+
+@media all and (max-width: 740px) {
+  .merks {
+    @include flex();
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+    &__quote {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    &__author {
+      align-self: flex-start;
+      
+    }
+  }
+}

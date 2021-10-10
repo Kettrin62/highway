@@ -528,9 +528,9 @@ template {
 }
 
 .introduction {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 230px 160px 50px 1fr;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
   padding-top: 20px;
   -moz-column-gap: 20px;
@@ -539,6 +539,14 @@ template {
   position: relative;
   max-height: 856px;
   box-sizing: border-box;
+}
+.introduction__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  gap: 50px;
 }
 .introduction__item {
   padding-top: 60px;
@@ -583,7 +591,7 @@ template {
   font-weight: normal;
   font-size: 18px;
   line-height: 100%;
-  margin: 167px 0 0;
+  margin: 26% 0 0;
   position: relative;
   max-width: 194px;
 }
@@ -609,19 +617,52 @@ template {
 }
 .introduction__image {
   max-width: 610px;
-  width: 100%;
+  width: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   grid-column: 2/3;
   grid-row: 1/5;
   height: 100%;
   max-height: 836px;
-  justify-self: end;
+  align-self: flex-end;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1000px) {
+  .introduction__item {
+    padding-top: 20px;
+  }
+  .introduction__caption {
+    margin-top: 0;
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 750px) {
   .introduction__caption {
     display: none;
+  }
+}
+@media all and (max-width: 500px) {
+  .introduction {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .introduction__item {
+    padding-top: 0;
+  }
+  .introduction__button {
+    width: 284px;
+    height: 46px;
+    font-size: 13px;
+    line-height: 146%;
+  }
+  .introduction__image {
+    width: calc(100% - 30px);
+    align-self: flex-end;
   }
 }
 .title {
@@ -633,7 +674,14 @@ template {
   margin: 0;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1000px) {
+  .title {
+    font-size: 40px;
+    line-height: 125%;
+    max-width: 284px;
+  }
+}
+@media all and (max-width: 700px) {
   .title {
     font-size: 32px;
     line-height: 125%;
@@ -655,7 +703,14 @@ template {
   color: #e5e5e5;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1000px) {
+  .discription {
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 284px;
+  }
+}
+@media all and (max-width: 700px) {
   .discription {
     font-size: 12px;
     line-height: 150%;
@@ -765,6 +820,37 @@ template {
     line-height: 160%;
   }
 }
+@media all and (max-width: 740px) {
+  .merks {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .merks__quote {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .merks__author {
+    align-self: flex-start;
+  }
+}
+.line {
+  display: none;
+}
+
+@media all and (max-width: 740px) {
+  .line {
+    display: block;
+    width: 100%;
+    height: 20px;
+    min-height: 20px;
+    border-top: 1px #e3e3e3 solid;
+    box-sizing: border-box;
+  }
+}
 .coating {
   overflow: hidden;
   padding-top: 60px;
@@ -772,9 +858,11 @@ template {
   max-width: 1440px;
 }
 
-.swiper {
-  width: 100%;
-  height: 802px;
+@media all and (max-width: 740px) {
+  .coating {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 .swiper__item {
   margin-bottom: 50px;
@@ -863,13 +951,75 @@ template {
   background-color: #434343;
   background-image: url(../images/swiper-button-next-dark.svg);
 }
+.swiper_place_coating {
+  width: 100%;
+  height: 802px;
+}
 .swiper_place_bicycles {
-  visibility: hidden;
+  display: none;
 }
 
-@media all and (max-width: 1182px) {
+@media all and (max-width: 740px) {
+  .swiper {
+    margin-top: 20px;
+  }
+  .swiper__item {
+    margin-bottom: 0;
+  }
+  .swiper__images {
+    display: block;
+    grid-area: image;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .swiper__image {
+    margin-top: 0;
+  }
+  .swiper__image:nth-of-type(2n) {
+    display: none;
+  }
+  .swiper__slide {
+    display: grid;
+    grid-template-rows: repeat(3, minmax(-webkit-min-content, -webkit-max-content));
+    grid-template-rows: repeat(3, minmax(min-content, max-content));
+    grid-template-areas: "title" "image" "discription";
+  }
+  .swiper__button-prev {
+    top: 9px;
+    right: 37px;
+    left: auto;
+    width: 24px;
+    height: 24px;
+  }
+  .swiper__button-prev::after {
+    width: 24px;
+    height: 24px;
+    border-radius: 30px;
+    background-size: 4.5px 10px;
+  }
+  .swiper__button-next {
+    top: 9px;
+    right: 0;
+    left: auto;
+    width: 24px;
+    height: 24px;
+  }
+  .swiper__button-next::after {
+    width: 24px;
+    height: 24px;
+    border-radius: 30px;
+    background-size: 4.5px 10px;
+  }
+  .swiper__pagination {
+    margin-left: calc((100% - 50px)/2);
+    margin-top: 17px;
+  }
+  .swiper_place_coating {
+    height: 425px;
+  }
   .swiper_place_bicycles {
-    visibility: visible;
+    display: block;
+    margin-top: 0;
   }
 }
 .bicycles {
@@ -881,6 +1031,26 @@ template {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+}
+.bicycles__button {
+  display: none;
+  width: 114px;
+  height: 30px;
+  background-image: url(../images/bicycles-button.svg);
+  background-repeat: no-repeat;
+  background-position: right 11px center;
+  background-size: 10px 40px;
+  margin: 0;
+  padding: 0;
+  padding-left: 12px;
+  text-align: left;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 127%;
+  border: 1px solid #e3e3e3;
+  background-color: #f4f4f4;
+  border-radius: 2px;
 }
 .bicycles__links {
   display: flex;
@@ -934,6 +1104,7 @@ template {
   margin: 0;
   display: block;
   border-radius: 20px;
+  position: relative;
 }
 .bicycles__image {
   max-width: 380px;
@@ -968,6 +1139,47 @@ template {
     font-size: 14px;
     line-height: 129%;
     font-weight: 600;
+  }
+}
+@media all and (max-width: 740px) {
+  .bicycles {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+  .bicycles__container {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .bicycles__button {
+    display: block;
+  }
+  .bicycles__list {
+    margin-top: 20px;
+  }
+  .bicycles__list_size_desktop {
+    display: none;
+  }
+  .bicycles__list-item {
+    width: 284px;
+    height: 306px;
+    width: 100%;
+  }
+  .bicycles__image {
+    max-width: 284px;
+    padding: 15px 15px 37px;
+    border-radius: 20px;
+    background-color: #fff;
+    filter: none;
+  }
+  .bicycles__caption {
+    margin-top: 0;
+    text-align: center;
+    position: absolute;
+    bottom: 16px;
+    left: calc((100% - 140px)/2);
+    z-index: 2;
   }
 }
 .training {
@@ -1020,6 +1232,21 @@ template {
     line-height: 143%;
   }
 }
+@media all and (max-width: 740px) {
+  .training {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .training__item {
+    margin-top: 0;
+    align-self: flex-start;
+  }
+}
 .footer {
   min-width: 320px;
   width: 100%;
@@ -1038,6 +1265,7 @@ template {
   min-height: 284px;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 .footer__title {
   font-weight: 600;
@@ -1079,11 +1307,17 @@ template {
     margin: 0 auto;
     min-height: 358px;
   }
+  .footer__container {
+    min-height: 273px;
+  }
+  .footer__title {
+    margin-bottom: 40px;
+  }
   .footer__label {
     background-image: url(../images/footer-mobile.svg);
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-size: 38px 38px;
+    background-size: 30px 30px;
   }
   .footer__author {
     font-weight: 500;
@@ -1125,6 +1359,8 @@ template {
   line-height: 215%;
   padding: 0;
   padding-left: 20px;
+  height: 50px;
+  line-height: 50px;
 }
 .form__item_theme_light {
   color: #151515;
@@ -1137,18 +1373,21 @@ template {
   font-size: 13px;
   line-height: 215%;
   opacity: 0.7;
+  vertical-align: inherit;
 }
 .form__item:-ms-input-placeholder {
   font-weight: 500;
   font-size: 13px;
   line-height: 215%;
   opacity: 0.7;
+  vertical-align: inherit;
 }
 .form__item::placeholder {
   font-weight: 500;
   font-size: 13px;
   line-height: 215%;
   opacity: 0.7;
+  vertical-align: inherit;
 }
 .form__item::-moz-placeholder_theme_light {
   color: #222;
@@ -1211,6 +1450,8 @@ template {
   font-weight: 500;
   font-size: 13px;
   line-height: 215%;
+  height: 50px;
+  line-height: 50px;
   opacity: 0.7;
 }
 .form__item::-moz-placeholder_theme_light {

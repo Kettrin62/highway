@@ -5,3 +5,10 @@
   padding-bottom: 60px;
   max-width: 1440px;
 }
+
+@media all and (max-width: 740px) {
+  .coating {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

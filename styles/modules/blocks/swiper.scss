@@ -1,5 +1,5 @@
 .swiper {
-  @include wh(100%, 802px);
+  // @include wh(100%, 802px);
   
 
   &__item {
@@ -105,18 +105,100 @@
 
 
   &_place {
+    &_coating {
+      @include wh(100%, 802px);
+    }
+
     &_bicycles {
-      visibility: hidden;
+      
+      display: none;
     }
   }
   
 }
 
-@media all and (max-width: 1182px) {
+@media all and (max-width: 740px) {
   .swiper {
+    margin-top: 20px;
+
+    &__item {
+      margin-bottom: 0;
+    }
+
+    &__images {
+      display: block;
+      grid-area: image;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    &__image {
+      margin-top: 0;
+      
+
+      &:nth-of-type(2n) {
+        display: none;
+      }
+    }
+
+    &__slide {
+      display: grid;
+      grid-template-rows: repeat(3, minmax(min-content, max-content));
+      grid-template-areas:
+      "title"
+      "image"
+      "discription";
+    }
+
+    &__button-prev {
+      top: 9px;
+      right: 37px;
+      left: auto;
+      
+      @include wh(24px, 24px);
+      
+      &::after {
+        
+        width: 24px;
+        height: 24px;
+        
+        border-radius: 30px;
+        background-size: 4.5px 10px;
+      }
+    }
+
+    &__button-next {
+      top: 9px;
+      right: 0;
+      left: auto;
+      
+      
+      @include wh(24px, 24px);
+      
+      &::after {
+        
+        width: 24px;
+        height: 24px;
+        
+        border-radius: 30px;
+        background-size: 4.5px 10px;
+      }
+    }
+
+    &__pagination {
+      margin-left: calc((100% - 50px)/2);
+      margin-top: 17px;
+
+      
+    }
+
     &_place {
+      &_coating {
+        height: 425px;
+      }
       &_bicycles {
-        visibility: visible;
+        display: block;
+        margin-top: 0;
       }
       
     }

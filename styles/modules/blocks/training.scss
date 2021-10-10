@@ -63,3 +63,18 @@
     }
   }
 }
+
+@media all and (max-width: 740px) {
+  .training {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    @include flex();
+    flex-direction: column;
+    gap: 40px;
+
+    &__item {
+      margin-top: 0;
+      align-self: flex-start;
+    }
+  }
+}

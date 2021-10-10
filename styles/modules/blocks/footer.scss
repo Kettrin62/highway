@@ -14,7 +14,7 @@
     min-height: 284px;
     width: 100%;
     max-width: 1200px;
-    // margin: 0 auto;
+    margin: 0 auto;
     // padding: 80px 0 60px;
   }
 
@@ -67,11 +67,19 @@
     margin: 0 auto;
     min-height: 358px;
 
+    &__container {
+      min-height: 273px;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
     &__label {
       background-image: url(../images/footer-mobile.svg);
       background-repeat: no-repeat;
       background-position: right bottom;
-      background-size: 38px 38px;
+      background-size: 30px 30px;
     }
 
     &__author {
