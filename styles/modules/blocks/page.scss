@@ -1,0 +1,52 @@
+.page {
+  margin: 0 auto;
+  font-family: $fontFamily;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
+    
+  &__section {
+    padding-left: calc(25%/3);
+
+    &_location {
+      &_center {
+        padding-right: calc(25%/3);
+      }
+
+      &_right {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &_theme {
+    &_light {
+      background-color: $backgroundColor;
+      color: $textColor;
+    }
+
+    &_dark {
+      background-color: $backgroundColorDark;
+      color: $textColorDark;
+    }
+  }
+}
+
+@media all and (max-width: 610px) {
+  .page__section {
+    padding-left: 18px;
+  }
+}
+
+@media all and (max-width: 610px) {
+  .page__section_location_center {
+    padding-right: 18px;
+  }
+}
+
+@media all and (max-width: 610px) {
+  .page__section_location_right {
+    padding-right: 18px;
+  }
+}

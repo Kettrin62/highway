@@ -1,0 +1,46 @@
+.fix {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 56.25%;
+  
+  &__container {
+    @include wh(810px, calc(100vw * .24));
+    min-height: 151px;
+
+    &:last-of-type {
+      height: 79px;
+      position: absolute;
+      bottom: -79px;
+    }
+  }
+  
+  &__image {
+    position: sticky;
+    top: 74px;
+    max-width: 340px;
+    width: calc(23.6vw);
+    padding: 20px 50px;
+    object-fit: cover;
+    border-radius: 20px;
+    background-color: $backgroundColor;
+    filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
+  }
+}
+
+@media all and (max-width: 600px) {
+  .fix {
+    width: 100%;
+
+    &__container {
+      min-height: 311px;
+    }
+
+    &__image {
+      min-width: 181px;
+      padding: 11px 27px;
+    }
+  }
+}

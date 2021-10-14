@@ -1,0 +1,6 @@
+.theme-switcher__light {
+  @i background-image: url(../../../images/theme-switcher-light.svg);
+  background-size: 28px 28px;
+  background-repeat: no-repeat;
+  background-position: center;
+}/*# sourceMappingURL=theme-switcher.css.map */

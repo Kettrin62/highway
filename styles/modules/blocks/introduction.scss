@@ -1,0 +1,144 @@
+.introduction {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 230px 160px 50px 1fr;
+  width: 100%;
+  padding-top: 20px;
+  column-gap: 20px;
+  max-width: 1440px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &__item {
+    padding-top: 60px;
+  }
+
+  &__button {
+    @include wh($w: 180px, $h: 50px);
+    background-color: $buttonBackgroundColor;
+    border-radius: 4px;
+    @include mp();
+    color: $buttonTextColor;
+    border: none;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: 1px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: $buttonColorHover;
+      transition: all 0.4s ease-in-out;
+      z-index: -1;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+
+  &__caption {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 100%;
+    margin: 26% 0 0;
+    position: relative;
+    max-width: 194px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 132px;
+      position: absolute;
+      top: 10px;
+      right: -162px;
+    }
+
+    &_theme {
+      &_light {
+        color: $textColor;
+
+        &::before {
+          border-bottom: 2px $lineColor solid;
+        }
+      }
+
+      &_dark {
+        color: $textColorDark;
+
+        &::before {
+          border-bottom: 2px $lineColorDark solid;
+        }
+      }
+    }
+  }
+
+  &__image {
+    max-width: 610px;
+    width: 100%;
+    object-fit: cover;
+    grid-column: 2/3;
+    grid-row: 1/5;
+    height: 100%;
+    max-height: 836px;
+    justify-self: end;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .introduction {
+    grid-template-rows: 160px 160px 50px 1fr;
+
+    &__item {
+      padding-top: 20px;
+    }line-height: 150%;
+
+    &__caption {
+      display: none;
+    }
+  }
+}
+
+
+
+@media all and (max-width: 600px) {
+  .introduction {
+    @include flex($align: flex-start);
+    flex-direction: column;
+
+  
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &__item {
+      padding-top: 0;
+    }
+
+    &__button {
+      @include wh($w: 284px, $h: 46px);
+      font-size: 13px;
+      line-height: 146%;
+    }
+
+    &__image {
+      width: calc(100% - 30px);
+      align-self: flex-end;
+    }
+  }
+}

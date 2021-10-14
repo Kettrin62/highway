@@ -1,0 +1,15 @@
+@mixin flex($align: center, $justify: flex-end) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin mp($m: 0, $p: 0) {
+  margin: $m;
+  padding: $p;
+}
+
+@mixin wh($w, $h) {
+  width: $w;
+  height: $h;
+}

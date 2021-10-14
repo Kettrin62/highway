@@ -1,0 +1,23 @@
+.title {
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 109%;
+  letter-spacing: -0.5px;
+  max-width: 460px;
+  margin: 0;
+}
+
+@media all and (max-width: 1000px) {
+  .title {
+    font-size: 40px;
+    line-height: 125%;
+    max-width: 284px;
+  }
+}
+@media all and (max-width: 700px) {
+  .title {
+    font-size: 32px;
+    line-height: 125%;
+    max-width: 284px;
+  }
+}/*# sourceMappingURL=title.css.map */

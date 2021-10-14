@@ -1,0 +1,85 @@
+.theme-switcher {
+  @include flex();
+  gap: 22px;
+
+  &__light {
+    @include wh(28px, 28px);
+    background-size: 28px 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &_theme {
+      &_light {
+        background-image: url(../images/theme-switcher-light.svg);
+      }
+
+      &_dark {
+        background-image: url(../images/theme-switcher-light-dark.svg);
+      }
+    }
+  }
+
+  &__container {
+    @include wh(44px, 24px);
+    @include flex($justify: center);
+    border-radius: 9999px;
+    margin: 2px;
+
+    &_theme {
+      &_light {
+        background-color: $switcherColor;
+      }
+
+      &_dark {
+        background-color: $switcherColorDark;
+      }
+    }
+  }
+
+  &__label {
+    @include wh(20px, 20px);
+  }
+
+  &__invisible-button {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  &__visible-button {
+    display: inline-block;
+    vertical-align: middle;
+    @include wh(20px, 20px);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  &__invisible-button:checked + &__visible-button {
+    background-color: $buttonBackgroundColor;
+  }
+
+  &__dark {
+    @include wh(20px, 20px);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &_theme {
+      &_light {
+        background-image: url(../images/theme-switcher-dark.svg);
+      }
+
+      &_dark {
+        background-image: url(../images/theme-switcher-dark-dark.svg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .theme-switcher_place_footer {
+    display: none;
+  }
+}

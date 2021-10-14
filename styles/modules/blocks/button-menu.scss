@@ -1,0 +1,19 @@
+.button-menu {
+  display: none;
+  cursor: pointer;
+  
+  &__line {
+    width: 22px;
+    margin-bottom: 5px;
+    border-bottom: 3px solid #151515;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .button-menu {
+    @include flex($justify: center);
+    flex-direction: column;
+    border: none;
+    padding: 0;
+  }
+}

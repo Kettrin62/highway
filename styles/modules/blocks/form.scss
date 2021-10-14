@@ -1,0 +1,183 @@
+.form {
+  &__email {
+    @include wh(360px, 50px);
+    @include mp();
+    opacity: .5;
+    box-sizing: border-box;
+    border-radius: 4px;
+    @include flex();
+    
+    &_theme {
+      &_light {
+        border: 1px solid $formColor;
+      }
+
+      &_dark {
+        border: 1px solid $formColorDark;
+      }
+    }
+  }
+
+  &__item {
+    display: block;
+    cursor: pointer;
+    border: 0;
+    @include wh(100%, 100%);
+    box-sizing: border-box;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    padding: 0;
+    padding-left: 20px;
+    height: 50px;
+    line-height: 50px;
+
+    &_theme {
+      &_light {
+        color: $textColor;
+      }
+
+      &_dark {
+        color: $textColorDark;
+      }
+    }
+  }
+
+  &__item::placeholder {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    opacity: 0.7;
+    vertical-align: inherit;
+    
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
+  }
+
+  &__item::placeholder:hover {
+    opacity: 1;
+
+    &_theme {
+      &_light {
+        color: $textColor;
+      }
+
+      &_dark {
+        color: $textColorDark;
+      }
+    }
+  }
+
+  &__item::-webkit-input-placeholder {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    opacity: 0.7;
+
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
+  }
+
+  &__item::-moz-placeholder {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    height: 50px;
+    line-height: 50px;
+    opacity: 0.7;
+
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
+  }
+
+  &__item::-ms-input-placeholder {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    opacity: 0.7;
+
+    &_theme {
+      &_light {
+        color: $discriptionTextColor;
+      }
+
+      &_dark {
+        color: $discriptionTextColorDark;
+      }
+    }
+  }
+
+  &__item:hover {
+    opacity: 1;
+
+    &_theme {
+      &_light {
+        color: $textColor;
+      }
+
+      &_dark {
+        color: $textColorDark;
+      }
+    }
+  }
+
+  &__item:focus {
+    outline: none;
+  }
+
+  &__button {
+    display: none;
+    border: none;
+    padding-right: 22px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 215%;
+    cursor: pointer;
+    background-color: inherit;
+    
+    &_active {
+      display: block;
+    }
+
+    &_theme {
+      &_light {
+        color: $textColor;
+      }
+
+      &_dark {
+        color: $textColorDark;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 396px) {
+  .form {
+    &__email {
+      width: 284px;
+    }
+  }
+}
+

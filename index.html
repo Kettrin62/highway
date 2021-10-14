@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <title>Шоссе, ТТ и Грэвел</title>
+</head>
+<body class="page page_theme_light">
+
+  <header class="header">
+    <nav class="nav header__nav page__section page__section_location_center">
+      <ul class="nav__links nav__links_type_horizontal">
+        <li class="nav__link">
+          <a href="#part-coating" class="nav__link">Покрытия и градиенты</a>
+        </li>
+        <li class="header__link">
+          <a href="#part-bicycles" class="nav__link">Велосипеды</a>
+        </li>
+        <li class="header__link">
+          <a href="#part-training" class="nav__link">Тренировки</a>
+        </li>
+      </ul>
+    </nav>
+    <button type="button" class="button-menu header__button">
+      <span class="button-menu__line"></span>
+      <span class="button-menu__line"></span>
+      <span class="button-menu__line"></span>
+    </button>
+    <section class="menu">
+      <button type="button" class="menu__button-close menu__button-close_theme_light"></button>
+      <nav class="nav">
+        <ul class="nav__links nav__links_type_vertical">
+          <li class="nav__link">
+            <a href="#part-coating" class="nav__link">Покрытия и градиенты</a>
+          </li>
+          <li class="header__link">
+            <a href="#part-bicycles" class="nav__link">Велосипеды</a>
+          </li>
+          <li class="header__link">
+            <a href="#part-training" class="nav__link">Тренировки</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="theme-switcher theme-switcher_place_header">
+        <div class="theme-switcher__light theme-switcher__light_theme_light"></div>
+        <div class="theme-switcher__container theme-switcher__container_theme_light">
+          <label for="light-header" class="theme-switcher__label">
+            <input type="radio" name="theme-switcher" id="light-header" class="theme-switcher__invisible-button" value="light" checked>
+            <span class="theme-switcher__visible-button"></span>
+          </label>
+          <label for="dark-header" class="theme-switcher__label">
+            <input type="radio" name="theme-switcher" id="dark-header" class="theme-switcher__invisible-button" value="dark">
+            <span class="theme-switcher__visible-button"></span>
+          </label>
+        </div>
+        <div class="theme-switcher__dark theme-switcher__dark_theme_light"></div>
+      </div>
+    </section>
+  </header>
+
+
+  <main class="content">
+    <section class="introduction page__section page__section_location_right">
+      <h1 class="title introduction__item">Шоссе, ТТ и&nbsp;Грэвел</h1>
+      <img src="./images/introduction-image.png" alt="Триатлонная дорога" class="introduction__image">
+      <p class="discription discription_theme_light">
+        Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным 
+        маршрутам&nbsp;&ndash; нужно только определиться с&nbsp;выбором 
+        велосипеда и&nbsp;отправиться в&nbsp;путь.
+      </p>
+      <button class="introduction__button">Подробнее</button>
+      <p class="introduction__caption introduction__caption_theme_light">Cannondale Systemsix</p>
+      <!-- <div class="fix">
+        <div class="fix__container"></div>
+        <img src="./images/fix-image.png" alt="Велосипед" class="fix__image">
+        <div class="fix__container"></div>
+      </div> -->
+    </section>
+    <section class="merks page__section page__section_location_center">
+      <div class="line"></div>
+      <img src="./images/merks-image.png" alt="Триатлонная дорога" class="merks__image">
+      <blockquote class="merks__quote">
+        &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&ndash;
+        но&nbsp;катайся&raquo;
+      </blockquote>
+      <div class="merks__author">
+        <h3 class="merks__quote-author">Эдди Меркс</h3>
+        <p class="merks__quote-author-subline merks__quote-author-subline_theme_light">Велогонщик</p>
+      </div>
+    </section>
+    <section class="coating page__section page__section_location_right" id="part-coating">
+      <div class="line"></div>
+      <div class="swiper swiper_place_coating">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper__slide">
+            <h2 class="title swiper__item">Шоссе</h2>
+            <p class="discription discription_theme_light swiper__item">
+              На&nbsp;шоссейном велосипеде можно ездить по асфальту на&nbsp;разных 
+              градиентах: будь&nbsp;то горы или равнины. Гонки проходят в&nbsp;командном 
+              пелотоне, но&nbsp;тренироваться можно и&nbsp;самостоятельно.
+            </p>
+            <div class="swiper__images">
+              <img src="./images/road-image.png" alt="Шоссе" class="swiper__image">
+              <img src="./images/gravel-image.png" alt="Грэвел" class="swiper__image">
+              <img src="./images/road-icon.svg" alt="Схема" class="swiper__icon">
+            </div>
+          </div>
+          <div class="swiper-slide swiper__slide">
+            <h2 class="title swiper__item">Грэвел</h2>
+            <p class="discription discription_theme_light swiper__item">
+              Грэвел похож на&nbsp;шоссейный велосипед, но&nbsp;конструкция рамы немного 
+              отличается, и&nbsp;на&nbsp;нём стоят более широкие покрышки, всё для того 
+              чтобы проехать по&nbsp;лёгкому бездорожью.
+            </p>
+            <div class="swiper__images">
+              <img src="./images/gravel-image.png" alt="Шоссе" class="swiper__image">
+              <img src="./images/triathlon-image.png" alt="Грэвел" class="swiper__image">
+              <img src="./images/gravel-icon.svg" alt="Схема" class="swiper__icon">
+            </div>
+          </div>
+          <div class="swiper-slide swiper__slide">
+            <h2 class="title swiper__item">ТТ</h2>
+            <p class="discription discription_theme_light swiper__item">
+              ТТ&nbsp;&mdash; это велосипед для триатлона или раздельного старта, гооняют 
+              на&nbsp;таком велике только по&nbsp;равнинному асфальту, велик очень быстрые 
+              и&nbsp;аэродинамичный.
+            </p>
+            <div class="swiper__images">
+              <img src="./images/triathlon-image.png" alt="Шоссе" class="swiper__image">
+              <img src="./images/road-image.png" alt="Грэвел" class="swiper__image">
+              <img src="./images/triathlon-icon.svg" alt="Схема" class="swiper__icon">
+            </div>
+          </div>
+        </div>
+        <div class="swiper__button-prev swiper__button-prev_theme_light"></div>
+        <div class="swiper__button-next swiper__button-next_theme_light"></div>
+      </div>
+    </section>
+    <section class="bicycles page__section page__section_location_center" id="part-bicycles">
+      <div class="line"></div>
+      <div class="bicycles__container">
+        <h2 class="title">Велосипеды</h2>
+        <button type="button" class="bicycles__button">Шоссе</button>
+        <nav class="bicycles__nav">
+          <ul class="bicycles__links">
+            <li class="bicycles__link">
+              <button type="button" class="bicycles__link bicycles__link_active">Шоссе</button>
+            </li>
+            <li class="bicycles__link">
+              <button type="button" class="bicycles__link">Грэвел</button>
+            </li>
+            <li class="bicycles__link">
+              <button type="button" class="bicycles__link">TT</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <ul class="bicycles__list bicycles__list_size_desktop">
+
+      </ul>
+      <div class="swiper swiper_place_bicycles">
+        <ul class="swiper-wrapper bicycles__list">
+          
+        </ul>
+        <div class="swiper__pagination"></div>
+      </div>
+    </section>
+    <section class="training page__section page__section_location_center" id="part-training">
+      <div class="line"></div>
+      <h2 class="title training__item">Тренировки</h2>
+      <img src="./images/training-image.png" alt="Триатлонная дорога" class="training__image">
+      <p class="discription discription_theme_light training__item">
+        Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а&nbsp;записать эти 
+        тренировки поможет приложение Strava, а&nbsp;также это приложение позволит построить тренировочный план.
+      </p>
+      <ul class="training__links">
+        <li class="training__link">
+          <a href="https://www.strava.com" target="_blank" class="training__link">Strava</a>
+        </li>
+        <li class="training__link">
+          <a href="https://www.komoot.com" target="_blank" class="training__link">Komoot</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer footer_theme_light">
+    <div class="footer__container page__section page__section_location_center">
+      <h3 class="footer__title">Подпишитесь на рассылку &mdash;</h3>
+      <form class="form">
+        <fieldset class="form__email">
+          <input type="email" name="email" class="form__item" placeholder="Ваш e-mail">
+          <button type="submit" class="form__button">ok</button>
+        </fieldset>
+      </form>
+      <div class="footer__label">
+        <p class="footer__author footer__author_theme_light">&copy; Road Club 2021</p>
+        <div class="theme-switcher theme-switcher_place_footer">
+          <div class="theme-switcher__light theme-switcher__light_theme_light"></div>
+          <div class="theme-switcher__container theme-switcher__container_theme_light">
+            <label for="light" class="theme-switcher__label">
+              <input type="radio" name="theme-switcher" id="light" class="theme-switcher__invisible-button" value="light" checked>
+              <span class="theme-switcher__visible-button"></span>
+            </label>
+            <label for="dark" class="theme-switcher__label">
+              <input type="radio" name="theme-switcher" id="dark" class="theme-switcher__invisible-button" value="dark">
+              <span class="theme-switcher__visible-button"></span>
+            </label>
+          </div>
+          <div class="theme-switcher__dark theme-switcher__dark_theme_light"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <template id="bicycles-template">
+    <li class="bicycles__list-item swiper-slide">
+      <a class="bicycles__link-item" target="_blank">
+        <figure class="bicycles__card">
+          <img class="bicycles__image">
+          <figcaption class="bicycles__caption"></figcaption>
+        </figure>
+      </a>
+    </li>
+  </template>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>

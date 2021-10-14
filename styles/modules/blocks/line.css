@@ -1,0 +1,10 @@
+.line {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .line {
+    display: block;
+    width: 100%;
+  }
+}/*# sourceMappingURL=line.css.map */

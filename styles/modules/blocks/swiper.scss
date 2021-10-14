@@ -1,0 +1,203 @@
+.swiper {
+  &__item {
+    margin-bottom: 50px;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(650px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+    background-image: url(../images/icon.svg);
+    @include wh(100px, 40px);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 12px 34px 12px 16px;
+    box-sizing: border-box;
+  }
+
+  &__button-prev {
+    left: 0;
+    right: auto;
+    position: absolute;
+    bottom: 0;
+    @include wh(50px, 50px);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      
+    &::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50px;
+    }
+  
+    &_theme {
+      &_light::after {
+        background-color: $swiperButtonColor;
+        background-image: url(../images/swiper-button-prev.svg);
+      }
+
+      &_dark::after {
+        background-color: $swiperButtonColorDark;
+        background-image: url(../images/swiper-button-prev-dark.svg);
+      }
+    }
+  }
+
+  &__button-next {
+    left: 70px;
+    right: auto;
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50px;
+    }
+
+    &_theme {
+      &_light::after {
+        background-color: $swiperButtonColor;
+        background-image: url(../images/swiper-button-next.svg);
+      }
+
+      &_dark::after {
+        background-color: $swiperButtonColorDark;
+        background-image: url(../images/swiper-button-next-dark.svg);
+      }
+    }
+  }
+
+
+  &_place {
+    &_coating {
+      @include wh(100%, 802px);
+    }
+
+    &_bicycles {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 740px) {
+  .swiper {
+    margin-top: 20px;
+
+    &__item {
+      margin-bottom: 0;
+    }
+
+    &__images {
+      display: block;
+      grid-area: image;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    &__image {
+      margin-top: 0;
+      
+
+      &:nth-of-type(2n) {
+        display: none;
+      }
+    }
+
+    &__slide {
+      display: grid;
+      grid-template-rows: repeat(3, minmax(min-content, max-content));
+      grid-template-areas:
+      "title"
+      "image"
+      "discription";
+    }
+
+    &__button-prev {
+      top: 9px;
+      right: calc(25%/3 + 37px);
+      left: auto;
+      @include wh(24px, 24px);
+      
+      &::after {
+        width: 24px;
+        height: 24px;
+        border-radius: 30px;
+        background-size: 4.5px 10px;
+      }
+    }
+
+    &__button-next {
+      top: 9px;
+      right: calc(25%/3);
+      left: auto;
+      @include wh(24px, 24px);
+      
+      &::after {
+        width: 24px;
+        height: 24px;
+        border-radius: 30px;
+        background-size: 4.5px 10px;
+      }
+    }
+
+    &__pagination {
+      margin-left: calc((100% - 50px)/2);
+      margin-top: 17px;
+    }
+
+    &_place {
+      &_coating {
+        min-height: 425px;
+        height: 100%;
+      }
+      &_bicycles {
+        display: block;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 610px) {
+  .swiper {
+    &__button-prev {
+      right: 37px;
+    }
+
+    &__button-next {
+      right: 0;
+    }
+  }
+}
