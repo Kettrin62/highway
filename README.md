@@ -24,4 +24,4 @@
 * JavaScript
 
 **Github-pages**
-[Ссылка на github-pages.](https://github.com/Kettrin62/highway)
+[Ссылка на github-pages.](https://kettrin62.github.io/highway/)
