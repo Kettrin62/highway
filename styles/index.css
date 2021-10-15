@@ -407,6 +407,7 @@ template {
   max-width: 1440px;
   min-width: 320px;
   width: 100%;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -472,6 +473,9 @@ template {
   line-height: 129%;
   font-weight: 500;
 }
+.nav__link:hover {
+  opacity: 0.75;
+}
 
 @media all and (max-width: 640px) {
   .nav__link {
@@ -483,7 +487,7 @@ template {
   display: none;
   flex-direction: column;
   width: 100%;
-  height: 640px;
+  min-height: 640px;
   position: fixed;
   left: 0;
   top: 0;
@@ -541,6 +545,14 @@ template {
 }
 .introduction__item {
   padding-top: 60px;
+}
+.introduction__text {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 156%;
+  opacity: 0.7;
+  max-width: 460px;
+  margin: 0;
 }
 .introduction__button {
   width: 180px;
@@ -618,13 +630,26 @@ template {
   justify-self: end;
 }
 
+@media all and (max-width: 1200px) {
+  .introduction {
+    grid-template-rows: 230px 230px 50px 1fr;
+  }
+  .introduction__text {
+    max-width: 260px;
+  }
+}
 @media all and (max-width: 1000px) {
   .introduction {
-    grid-template-rows: 160px 160px 50px 1fr;
-    line-height: 150%;
+    grid-template-rows: 120px 1fr 50px;
+    row-gap: 30px;
   }
   .introduction__item {
     padding-top: 20px;
+    line-height: 150%;
+  }
+  .introduction__text {
+    font-size: 16px;
+    max-width: 220px;
   }
   .introduction__caption {
     display: none;
@@ -642,6 +667,10 @@ template {
   }
   .introduction__item {
     padding-top: 0;
+  }
+  .introduction__text {
+    font-size: 12px;
+    line-height: 150%;
   }
   .introduction__button {
     width: 284px;
@@ -706,23 +735,16 @@ template {
 }
 .fix {
   position: absolute;
-  z-index: 5;
+  top: calc(24vw + 74px);
   right: 0;
-  top: 0;
-  height: 100%;
-  width: 56.25%;
-}
-.fix__container {
-  width: 810px;
-  height: calc(100vw * .24);
-  min-height: 151px;
-}
-.fix__container:last-of-type {
-  height: 79px;
-  position: absolute;
-  bottom: -79px;
+  bottom: 5.5vw;
+  max-width: 810px;
+  max-height: 430px;
+  width: 56vw;
+  height: 30vw;
 }
 .fix__image {
+  position: -webkit-sticky;
   position: sticky;
   top: 74px;
   max-width: 340px;
@@ -737,10 +759,9 @@ template {
 
 @media all and (max-width: 600px) {
   .fix {
-    width: 100%;
-  }
-  .fix__container {
-    min-height: 311px;
+    top: 385px;
+    width: calc(100% - 18px);
+    height: 57vw;
   }
   .fix__image {
     min-width: 181px;
@@ -845,10 +866,10 @@ template {
   .line {
     display: block;
     width: 100%;
-    height: 20px;
-    min-height: 20px;
-    border-top: 1px #e3e3e3 solid;
-    box-sizing: border-box;
+    border: 1px #e3e3e3 solid;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
   }
 }
 .coating {
@@ -922,6 +943,9 @@ template {
   background-color: #434343;
   background-image: url(../images/swiper-button-prev-dark.svg);
 }
+.swiper__button-prev:hover {
+  opacity: 0.75;
+}
 .swiper__button-next {
   left: 70px;
   right: auto;
@@ -950,6 +974,9 @@ template {
 .swiper__button-next_theme_dark::after {
   background-color: #434343;
   background-image: url(../images/swiper-button-next-dark.svg);
+}
+.swiper__button-next:hover {
+  opacity: 0.75;
 }
 .swiper_place_coating {
   width: 100%;
@@ -1126,8 +1153,11 @@ template {
      object-position: center;
   border-radius: 20px;
   background-color: #f4f4f4;
-  filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
   box-sizing: border-box;
+}
+.bicycles__image:hover {
+  filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.11));
 }
 .bicycles__caption {
   text-align: left;
@@ -1231,6 +1261,9 @@ template {
   line-height: 156%;
   font-weight: 600;
 }
+.training__link:hover {
+  opacity: 0.75;
+}
 .training__image {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1260,6 +1293,9 @@ template {
     justify-content: flex-end;
     flex-direction: column;
     gap: 0;
+  }
+  .training__links {
+    align-self: flex-start;
   }
   .training__item {
     margin-top: 20px;

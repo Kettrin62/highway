@@ -2,9 +2,10 @@
   display: none;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 740px) {
   .line {
     display: block;
     width: 100%;
+    size: 1px;
   }
 }/*# sourceMappingURL=line.css.map */

@@ -62,6 +62,10 @@
         background-image: url(../images/swiper-button-prev-dark.svg);
       }
     }
+
+    &:hover {
+      opacity: .75;
+    }
   }
 
   &__button-next {
@@ -96,6 +100,10 @@
         background-color: $swiperButtonColorDark;
         background-image: url(../images/swiper-button-next-dark.svg);
       }
+    }
+
+    &:hover {
+      opacity: .75;
     }
   }
 
