@@ -7,23 +7,8 @@
     @include flex($align: flex-end, $justify: space-between);
   }
 
-  &__button {
+  &__menu {
     display: none;
-    @include wh($w: 114px, $h: 30px);
-    background-image: url(../images/bicycles-button.svg);
-    background-repeat: no-repeat;
-    background-position: right 11px center;
-    background-size: 10px 40px;
-    @include mp();
-    padding-left: 12px;
-    text-align: left;
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 11px;
-    line-height: 127%;
-    border: 1px solid $lineMobileColor;
-    background-color: $backgroundColor;
-    border-radius: 2px;
   }
 
   &__links {
@@ -136,12 +121,80 @@
       gap: 40px;
     }
 
+    &__menu {
+      display: block;
+      
+
+      
+      
+      @include wh($w: 114px, $h: min-content);
+      // background-image: url(../images/bicycles-button.svg);
+      // background-repeat: no-repeat;
+      // background-position: right 11px top -4px;
+      // background-size: 10px 40px;
+      border: 1px solid $lineMobileColor;
+      background-color: $backgroundColor;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
     &__button {
       display: block;
+      @include wh($w: 100%, $h: 30px);
+      background-image: url(../images/bicycles-button.svg);
+      background-repeat: no-repeat;
+      background-position: right 11px center;
+      background-size: 10px 40px;
+      @include mp();
+      padding-left: 12px;
+      padding-right: 30px;
+      text-align: left;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 127%;
+      border: 1px solid $lineMobileColor;
+      background-color: $backgroundColor;
+      border-radius: 2px;
+      cursor: pointer;
+
+      
+      
     }
+
+    &__item {
+      display: block;
+      padding-left: 12px;
+
+      &_closed {
+        display: none;
+      }
+    }
+
 
     &__nav {
       display: none;
+    }
+
+    &__links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    
+    }
+
+    &__link {
+      font-size: 11px;
+      line-height: 127%;
+      font-weight: normal;
+      opacity: .7;
+      height: 30px;
+      text-align: left;
+
+      &_active {
+        opacity: 1;
+        font-weight: 600;
+      }
     }
 
     &__list {

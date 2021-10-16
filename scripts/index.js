@@ -6,6 +6,10 @@ const menuElement = bodyElement.querySelector('.menu');
 const menuButton = bodyElement.querySelector('.button-menu');
 // находим кнопку закрытия меню
 const menuCloseButton = bodyElement.querySelector('.menu__button-close');
+// находим кнопку выбора раздела велосипедов
+const bicyclesButton = bodyElement.querySelector('.bicycles__button');
+// находим кнопку выбора раздела велосипедов
+const bicyclesItemElement = bodyElement.querySelector('.bicycles__item');
 // находим список с велосипедами
 const bicyclesContainers = bodyElement.querySelectorAll('.bicycles__list');
 // находим список ссылок, по которым меняется список велосипедов
@@ -33,6 +37,11 @@ const themeSwitcherElements = bodyElement.querySelectorAll('.theme-switcher__con
 const themeSwitcherDarkElements = bodyElement.querySelectorAll('.theme-switcher__dark');
 const footerAuthorElement = bodyElement.querySelector('.footer__author');
 const closeMenuButton = bodyElement.querySelector('.menu__button-close');
+
+// собираем все якоря; устанавливаем время анимации и количество кадров
+const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
+      animationTime = 400,
+      framesCount = 20;
 
 const swiperCoating = new Swiper('.swiper_place_coating', {
   // Optional parameters
@@ -319,6 +328,16 @@ function formSubmitHandler (evt) {
   deActiveButton();
 }
 
+// функция открытия списка по велосипедам
+function openItem() {
+  bicyclesItemElement.classList.toggle('bicycles__item_closed');
+}
+
+// функция закрытия списка по велосипедам
+function closeItem() {
+  bicyclesItemElement.classList.add('bicycles__item_closed');
+}
+
 // обработчик клика по кнопке меню
 menuButton.addEventListener('click', () => {
   openMenu();
@@ -328,6 +347,46 @@ menuButton.addEventListener('click', () => {
 menuCloseButton.addEventListener('click', () => {
   closeMenu();
 });
+
+
+
+// функция замены ссылки в кнопке
+function changeLink(link) {
+  bicyclesButton.textContent = link.textContent;
+}
+
+
+// функция обработчика нажатия на ссылку mobile
+function linkMobileHandler(link) {
+  link.addEventListener('click', function (evt) {
+    const eventTarget = evt.target;
+    // обнуляем все ссылки
+    inactiveLink(eventTarget);
+    // активируем нужную ссылку
+    actionLink(eventTarget);
+    changeLink(eventTarget);
+  });
+}
+
+
+
+
+
+// обработчик клика по кнопке выбора велосипедов mobile
+bicyclesButton.addEventListener('click', () => {
+  openItem();
+  const bicyclesLinkEelements = bicyclesItemElement.querySelectorAll('.bicycles__link');
+  console.log(bicyclesLinkEelements);
+  bicyclesLinkEelements.forEach((el) => {
+    linkMobileHandler(el);
+  });
+});
+
+
+
+
+
+
 
 searchArray(initialBicyclesRoad);
 
@@ -355,4 +414,37 @@ lightSwitcherFooterButton.addEventListener('click', () => {
 });
 lightSwitcherHeaderButton.addEventListener('click', () => {
   switchThemeLight();
+});
+
+
+
+
+
+anchors.forEach(function(item) {
+  // каждому якорю присваиваем обработчик события
+  item.addEventListener('click', function(e) {
+    // убираем стандартное поведение
+    e.preventDefault();
+    
+    // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+    let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
+    
+    // запускаем интервал, в котором
+    let scroller = setInterval(function() {
+      // считаем на сколько скроллить за 1 такт
+      let scrollBy = coordY / framesCount;
+      
+      // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+      // и дно страницы не достигнуто
+      if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+        // то скроллим на к-во пикселей, которое соответствует одному такту
+        window.scrollBy(0, scrollBy);
+      } else {
+        // иначе добираемся до элемента и выходим из интервала
+        window.scrollTo(0, coordY);
+        clearInterval(scroller);
+      }
+    // время интервала равняется частному от времени анимации и к-ва кадров
+    }, animationTime / framesCount);
+  });
 });
