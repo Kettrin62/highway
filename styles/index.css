@@ -407,7 +407,6 @@ template {
   max-width: 1440px;
   min-width: 320px;
   width: 100%;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -426,7 +425,7 @@ template {
     display: none;
   }
   .header__button {
-    margin-right: 30px;
+    margin-right: 20px;
   }
 }
 .button-menu {
@@ -533,6 +532,7 @@ template {
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
+  position: relative;
 }
 
 .introduction {
@@ -676,6 +676,7 @@ template {
   .introduction__text {
     font-size: 12px;
     line-height: 150%;
+    max-width: 284px;
   }
   .introduction__button {
     width: 284px;
@@ -740,7 +741,7 @@ template {
 }
 .fix {
   position: absolute;
-  top: calc(24vw + 74px);
+  top: calc(24vw + 45px);
   right: 0;
   bottom: 5.5vw;
   max-width: 810px;
@@ -749,7 +750,6 @@ template {
   height: 30vw;
 }
 .fix__image {
-  position: -webkit-sticky;
   position: sticky;
   top: 74px;
   max-width: 340px;
@@ -993,7 +993,7 @@ template {
 
 @media all and (max-width: 740px) {
   .swiper {
-    margin-top: 20px;
+    margin-top: 40px;
   }
   .swiper__item {
     margin-bottom: 0;
@@ -1043,8 +1043,11 @@ template {
     background-size: 4.5px 10px;
   }
   .swiper__pagination {
-    margin-left: calc((100% - 50px)/2);
-    margin-top: 17px;
+    margin-left: calc((100% - 30px)/2);
+    margin-top: 5px;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
   }
   .swiper_place_coating {
     min-height: 425px;
@@ -1188,7 +1191,7 @@ template {
     padding-bottom: 30px;
   }
   .bicycles__container {
-    margin-top: 20px;
+    margin-top: 40px;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;

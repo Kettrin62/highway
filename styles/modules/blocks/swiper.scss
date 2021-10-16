@@ -121,7 +121,7 @@
 
 @media all and (max-width: 740px) {
   .swiper {
-    margin-top: 20px;
+    margin-top: 40px;
 
     &__item {
       margin-bottom: 0;
@@ -181,8 +181,9 @@
     }
 
     &__pagination {
-      margin-left: calc((100% - 50px)/2);
-      margin-top: 17px;
+      margin-left: calc((100% - 30px)/2);
+      margin-top: 5px;
+      width: min-content;
     }
 
     &_place {
