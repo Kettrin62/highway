@@ -209,3 +209,23 @@
     }
   }
 }
+
+.swiper-pagination-bullet {
+  // margin: 10px !important;
+  // border-top: 3px solid;
+  // border-top-color: #aaa;
+  // opacity: 1 !important;
+  @include wh(4px, 4px);
+  border-radius: 50%;
+  background-color: #cacaca;
+}
+
+.swiper-pagination-bullet-active {
+  // margin: 10px !important;
+  // border-top: 3px solid;
+  // border-top-color: #aaa;
+  // opacity: 1 !important;
+  @include wh(4px, 4px);
+  border-radius: 50%;
+  background-color: #151515;
+}

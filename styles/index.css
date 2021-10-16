@@ -1063,6 +1063,20 @@ template {
     right: 0;
   }
 }
+.swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #cacaca;
+}
+
+.swiper-pagination-bullet-active {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #151515;
+}
+
 .bicycles {
   padding-top: 60px;
   padding-bottom: 60px;

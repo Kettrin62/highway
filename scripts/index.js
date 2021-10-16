@@ -67,6 +67,12 @@ const swiperBicycles = new Swiper('.swiper_place_bicycles', {
   // If we need pagination
   pagination: {
     el: '.swiper__pagination',
+    clickable: true,
+      renderBullet: function(index, className) {
+        return '\
+          <div class="box ' + className + '">\
+          </div>';
+      },
   },
 });
 
