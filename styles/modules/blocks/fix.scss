@@ -1,22 +1,13 @@
 .fix {
   position: absolute;
-  z-index: 5;
+  top: calc(24vw + 45px);
   right: 0;
-  top: 0;
-  height: 100%;
-  width: 56.25%;
-  
-  &__container {
-    @include wh(810px, calc(100vw * .24));
-    min-height: 151px;
+  bottom: 5.5vw;
+  max-width: 810px;
+  max-height: 430px;
+  width: 56vw;
+  height: 30vw;
 
-    &:last-of-type {
-      height: 79px;
-      position: absolute;
-      bottom: -79px;
-    }
-  }
-  
   &__image {
     position: sticky;
     top: 74px;
@@ -32,11 +23,9 @@
 
 @media all and (max-width: 600px) {
   .fix {
-    width: 100%;
-
-    &__container {
-      min-height: 311px;
-    }
+    top: 385px;
+    width: calc(100% - 18px);
+    height: 57vw;
 
     &__image {
       min-width: 181px;

@@ -7,23 +7,8 @@
     @include flex($align: flex-end, $justify: space-between);
   }
 
-  &__button {
+  &__menu {
     display: none;
-    @include wh($w: 114px, $h: 30px);
-    background-image: url(../images/bicycles-button.svg);
-    background-repeat: no-repeat;
-    background-position: right 11px center;
-    background-size: 10px 40px;
-    @include mp();
-    padding-left: 12px;
-    text-align: left;
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 11px;
-    line-height: 127%;
-    border: 1px solid $lineMobileColor;
-    background-color: $backgroundColor;
-    border-radius: 2px;
   }
 
   &__links {
@@ -60,7 +45,7 @@
   }
 
   &__list-item {
-    @include wh(380px, 380px);
+    max-height: 380px;
     width: 100%;
   }
 
@@ -90,8 +75,12 @@
     object-position: center;
     border-radius: 20px;
     background-color: $backgroundColor;
-    filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
     box-sizing: border-box;
+
+    &:hover {
+      filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.11));
+    }
   }
 
   &__caption {
@@ -126,22 +115,79 @@
     padding-bottom: 30px;
 
     &__container {
-      margin-top: 20px;
+      margin-top: 40px;
       flex-direction: column;
       align-items: flex-start;
       gap: 40px;
     }
 
+    &__menu {
+      display: block;
+      @include wh($w: 114px, $h: min-content);
+      border: 1px solid $lineMobileColor;
+      background-color: $backgroundColor;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
     &__button {
       display: block;
+      @include wh($w: 100%, $h: 30px);
+      background-image: url(../images/bicycles-button.svg);
+      background-repeat: no-repeat;
+      background-position: right 11px center;
+      background-size: 10px 40px;
+      @include mp();
+      padding-left: 12px;
+      padding-right: 30px;
+      text-align: left;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 127%;
+      border: 1px solid $lineMobileColor;
+      background-color: $backgroundColor;
+      border-radius: 2px;
+      cursor: pointer;
     }
+
+    &__item {
+      display: block;
+      padding-left: 12px;
+
+      &_closed {
+        display: none;
+      }
+    }
+
 
     &__nav {
       display: none;
     }
 
+    &__links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    &__link {
+      font-size: 11px;
+      line-height: 127%;
+      font-weight: normal;
+      opacity: .7;
+      height: 30px;
+      text-align: left;
+
+      &_active {
+        opacity: 1;
+        font-weight: 600;
+      }
+    }
+
     &__list {
       margin-top: 20px;
+      display: flex;
       &_size {
         &_desktop {
           display: none;
@@ -158,11 +204,8 @@
       @include flex($align: center, $justify: center);
       width: 100%;
     }
-      
-    
 
     &__image {
-      
       max-width: 284px;
       width: 100%;
       padding: 15px 15px 37px;

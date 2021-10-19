@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./styles/index.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="./styles/index.css">
   <title>Шоссе, ТТ и Грэвел</title>
 </head>
 <body class="page page_theme_light">
-
   <header class="header">
     <nav class="nav header__nav page__section page__section_location_center">
       <ul class="nav__links nav__links_type_horizontal">
@@ -49,11 +48,11 @@
         <div class="theme-switcher__light theme-switcher__light_theme_light"></div>
         <div class="theme-switcher__container theme-switcher__container_theme_light">
           <label for="light-header" class="theme-switcher__label">
-            <input type="radio" name="theme-switcher" id="light-header" class="theme-switcher__invisible-button" value="light" checked>
+            <input type="radio" name="theme-switcher-header" id="light-header" class="theme-switcher__invisible-button" value="light">
             <span class="theme-switcher__visible-button"></span>
           </label>
           <label for="dark-header" class="theme-switcher__label">
-            <input type="radio" name="theme-switcher" id="dark-header" class="theme-switcher__invisible-button" value="dark">
+            <input type="radio" name="theme-switcher-header" id="dark-header" class="theme-switcher__invisible-button" value="dark" checked>
             <span class="theme-switcher__visible-button"></span>
           </label>
         </div>
@@ -61,27 +60,23 @@
       </div>
     </section>
   </header>
-
-
   <main class="content">
     <section class="introduction page__section page__section_location_right">
       <h1 class="title introduction__item">Шоссе, ТТ и&nbsp;Грэвел</h1>
       <img src="./images/introduction-image.png" alt="Триатлонная дорога" class="introduction__image">
-      <p class="discription discription_theme_light">
+      <p class="introduction__text ">
         Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным 
         маршрутам&nbsp;&ndash; нужно только определиться с&nbsp;выбором 
         велосипеда и&nbsp;отправиться в&nbsp;путь.
       </p>
-      <button class="introduction__button">Подробнее</button>
+      <button type="button" class="introduction__button">Подробнее</button>
       <p class="introduction__caption introduction__caption_theme_light">Cannondale Systemsix</p>
-      <!-- <div class="fix">
-        <div class="fix__container"></div>
-        <img src="./images/fix-image.png" alt="Велосипед" class="fix__image">
-        <div class="fix__container"></div>
-      </div> -->
     </section>
+    <article class="fix">
+      <img src="./images/fix-image.png" alt="Велосипед" class="fix__image">
+    </article>
     <section class="merks page__section page__section_location_center">
-      <div class="line"></div>
+      <hr class="line">
       <img src="./images/merks-image.png" alt="Триатлонная дорога" class="merks__image">
       <blockquote class="merks__quote">
         &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&ndash;
@@ -93,7 +88,7 @@
       </div>
     </section>
     <section class="coating page__section page__section_location_right" id="part-coating">
-      <div class="line"></div>
+      <hr class="line">
       <div class="swiper swiper_place_coating">
         <div class="swiper-wrapper">
           <div class="swiper-slide swiper__slide">
@@ -141,10 +136,25 @@
       </div>
     </section>
     <section class="bicycles page__section page__section_location_center" id="part-bicycles">
-      <div class="line"></div>
+      <hr class="line">
       <div class="bicycles__container">
         <h2 class="title">Велосипеды</h2>
-        <button type="button" class="bicycles__button">Шоссе</button>
+        <div class="bicycles__menu">
+          <button type="button" class="bicycles__button">Шоссе</button>
+          <div class="bicycles__item bicycles__item_closed">
+            <ul class="bicycles__links">
+              <li>
+                <button type="button" class="bicycles__link bicycles__link_active">Шоссе</button>
+              </li>
+              <li>
+                <button type="button" class="bicycles__link">Грэвел</button>
+              </li>
+              <li>
+                <button type="button" class="bicycles__link">TT</button>
+              </li>
+            </ul>
+          </div>
+        </div>
         <nav class="bicycles__nav">
           <ul class="bicycles__links">
             <li class="bicycles__link">
@@ -163,14 +173,14 @@
 
       </ul>
       <div class="swiper swiper_place_bicycles">
-        <ul class="swiper-wrapper bicycles__list">
-          
+        <ul class="swiper-wrapper bicycles__list bicycles__list_size_mobile">
+
         </ul>
         <div class="swiper__pagination"></div>
       </div>
     </section>
     <section class="training page__section page__section_location_center" id="part-training">
-      <div class="line"></div>
+      <hr class="line">
       <h2 class="title training__item">Тренировки</h2>
       <img src="./images/training-image.png" alt="Триатлонная дорога" class="training__image">
       <p class="discription discription_theme_light training__item">
@@ -190,7 +200,7 @@
   <footer class="footer footer_theme_light">
     <div class="footer__container page__section page__section_location_center">
       <h3 class="footer__title">Подпишитесь на рассылку &mdash;</h3>
-      <form class="form">
+      <form class="form" name="subscribe">
         <fieldset class="form__email">
           <input type="email" name="email" class="form__item" placeholder="Ваш e-mail">
           <button type="submit" class="form__button">ok</button>
@@ -202,11 +212,11 @@
           <div class="theme-switcher__light theme-switcher__light_theme_light"></div>
           <div class="theme-switcher__container theme-switcher__container_theme_light">
             <label for="light" class="theme-switcher__label">
-              <input type="radio" name="theme-switcher" id="light" class="theme-switcher__invisible-button" value="light" checked>
+              <input type="radio" name="theme-switcher-footer" id="light" class="theme-switcher__invisible-button" value="light" checked>
               <span class="theme-switcher__visible-button"></span>
             </label>
             <label for="dark" class="theme-switcher__label">
-              <input type="radio" name="theme-switcher" id="dark" class="theme-switcher__invisible-button" value="dark">
+              <input type="radio" name="theme-switcher-footer" id="dark" class="theme-switcher__invisible-button" value="dark">
               <span class="theme-switcher__visible-button"></span>
             </label>
           </div>

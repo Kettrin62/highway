@@ -24,6 +24,10 @@
     font-size: 14px;
     line-height: 129%;
     font-weight: 500;
+
+    &:hover {
+      opacity: .75;
+    }
   }
 }
 

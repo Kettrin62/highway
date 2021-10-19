@@ -28,6 +28,7 @@
     background-position: center;
     padding: 12px 34px 12px 16px;
     box-sizing: border-box;
+    background-size: cover;
   }
 
   &__button-prev {
@@ -61,6 +62,10 @@
         background-color: $swiperButtonColorDark;
         background-image: url(../images/swiper-button-prev-dark.svg);
       }
+    }
+
+    &:hover {
+      opacity: .75;
     }
   }
 
@@ -97,6 +102,10 @@
         background-image: url(../images/swiper-button-next-dark.svg);
       }
     }
+
+    &:hover {
+      opacity: .75;
+    }
   }
 
 
@@ -113,7 +122,7 @@
 
 @media all and (max-width: 740px) {
   .swiper {
-    margin-top: 20px;
+    margin-top: 40px;
 
     &__item {
       margin-bottom: 0;
@@ -128,7 +137,6 @@
 
     &__image {
       margin-top: 0;
-      
 
       &:nth-of-type(2n) {
         display: none;
@@ -173,8 +181,9 @@
     }
 
     &__pagination {
-      margin-left: calc((100% - 50px)/2);
-      margin-top: 17px;
+      margin-left: calc((100% - 30px)/2);
+      margin-top: 5px;
+      width: min-content;
     }
 
     &_place {
@@ -192,6 +201,11 @@
 
 @media all and (max-width: 610px) {
   .swiper {
+    &__icon {
+      @include wh(70px, 28px);
+      padding: 8px 24px 8px 11px;
+    }
+
     &__button-prev {
       right: 37px;
     }
@@ -200,4 +214,16 @@
       right: 0;
     }
   }
+}
+
+.swiper-pagination-bullet {
+  @include wh(4px, 4px);
+  border-radius: 50%;
+  background-color: #cacaca;
+}
+
+.swiper-pagination-bullet-active {
+  @include wh(4px, 4px);
+  border-radius: 50%;
+  background-color: #151515;
 }

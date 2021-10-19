@@ -14,6 +14,15 @@
     padding-top: 60px;
   }
 
+  &__text {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 156%;
+    opacity: 0.7;
+    max-width: 460px;
+    margin: 0;
+  }
+
   &__button {
     @include wh($w: 180px, $h: 50px);
     background-color: $buttonBackgroundColor;
@@ -100,13 +109,31 @@
   }
 }
 
+@media all and (max-width: 1200px) {
+  .introduction {
+    grid-template-rows: 230px 230px 50px 1fr;
+
+    &__text {
+      max-width: 260px;
+    }
+  }
+}
+
 @media all and (max-width: 1000px) {
   .introduction {
-    grid-template-rows: 160px 160px 50px 1fr;
+    grid-template-rows: 120px 1fr 50px;
+    
+    row-gap: 30px;
 
     &__item {
       padding-top: 20px;
-    }line-height: 150%;
+      line-height: 150%;
+    }
+
+    &__text {
+      font-size: 16px;
+      max-width: 220px;
+    }
 
     &__caption {
       display: none;
@@ -120,14 +147,18 @@
   .introduction {
     @include flex($align: flex-start);
     flex-direction: column;
-
-  
     gap: 40px;
     padding-top: 40px;
     padding-bottom: 40px;
 
     &__item {
       padding-top: 0;
+    }
+
+    &__text {
+      font-size: 12px;
+      line-height: 150%;
+      max-width: 284px;
     }
 
     &__button {

@@ -23,6 +23,10 @@
     font-size: 18px;
     line-height: 156%;
     font-weight: 600;
+
+    &:hover {
+      opacity: .75;
+    }
   }
 
   &__image {
@@ -56,6 +60,10 @@
     @include flex();
     flex-direction: column;
     gap: 0;
+
+    &__links {
+      align-self: flex-start;
+    }
 
     &__item {
       margin-top: 20px;
