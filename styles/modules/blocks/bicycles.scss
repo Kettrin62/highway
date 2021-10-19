@@ -45,7 +45,8 @@
   }
 
   &__list-item {
-    @include wh(380px, 380px);
+    // @include wh(380px, 380px);
+    max-height: 380px;
     width: 100%;
   }
 
@@ -199,6 +200,7 @@
 
     &__list {
       margin-top: 20px;
+      display: flex;
       &_size {
         &_desktop {
           display: none;

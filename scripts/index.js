@@ -11,7 +11,8 @@ const bicyclesButton = bodyElement.querySelector('.bicycles__button');
 // находим кнопку выбора раздела велосипедов
 const bicyclesItemElement = bodyElement.querySelector('.bicycles__item');
 // находим список с велосипедами
-const bicyclesContainers = bodyElement.querySelectorAll('.bicycles__list');
+const bicyclesContainersDesktop = bodyElement.querySelectorAll('.bicycles__list_size_desktop');
+const bicyclesContainersMobile = bodyElement.querySelectorAll('.bicycles__list_size_mobile');
 // находим список ссылок, по которым меняется список велосипедов
 const bicyclesLinks = bodyElement.querySelectorAll('.bicycles__link');
 // находим форму
@@ -170,15 +171,17 @@ function deleteBicycles() {
 // функция заполнения контейнера с велосипедами
 function searchArray(array) {
   array.forEach((item) => {
-    // вызываем функцию addCard
+    // вызываем функцию addBicycles
     const bicyclesItem = addBicycles(item.name, item.src, item.link);
     // добавим элемент в конец контейнера со списком
     // bicyclesContainers[0].append(bicyclesItem);
     // bicyclesContainers[1].append(bicyclesItem);
+    
     if (window.innerWidth <= 740) {
-      bicyclesContainers[1].append(bicyclesItem);
+      
+      bicyclesContainersMobile[0].append(bicyclesItem);
     } else {
-      bicyclesContainers[0].append(bicyclesItem);
+      bicyclesContainersDesktop[0].append(bicyclesItem);
     };
   });
 }

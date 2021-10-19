@@ -407,6 +407,7 @@ template {
   max-width: 1440px;
   min-width: 320px;
   width: 100%;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -750,6 +751,7 @@ template {
   height: 30vw;
 }
 .fix__image {
+  position: -webkit-sticky;
   position: sticky;
   top: 74px;
   max-width: 340px;
@@ -1128,8 +1130,7 @@ template {
   padding: 0;
 }
 .bicycles__list-item {
-  width: 380px;
-  height: 380px;
+  max-height: 380px;
   width: 100%;
 }
 .bicycles__link-item {
@@ -1258,6 +1259,7 @@ template {
   }
   .bicycles__list {
     margin-top: 20px;
+    display: flex;
   }
   .bicycles__list_size_desktop {
     display: none;
