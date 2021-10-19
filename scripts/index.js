@@ -174,11 +174,7 @@ function searchArray(array) {
     // вызываем функцию addBicycles
     const bicyclesItem = addBicycles(item.name, item.src, item.link);
     // добавим элемент в конец контейнера со списком
-    // bicyclesContainers[0].append(bicyclesItem);
-    // bicyclesContainers[1].append(bicyclesItem);
-    
     if (window.innerWidth <= 740) {
-      
       bicyclesContainersMobile[0].append(bicyclesItem);
     } else {
       bicyclesContainersDesktop[0].append(bicyclesItem);
@@ -357,13 +353,10 @@ menuCloseButton.addEventListener('click', () => {
   closeMenu();
 });
 
-
-
 // функция замены ссылки в кнопке
 function changeLink(link) {
   bicyclesButton.textContent = link.textContent;
 }
-
 
 // функция обработчика нажатия на ссылку mobile
 function linkMobileHandler(link) {
@@ -377,10 +370,6 @@ function linkMobileHandler(link) {
   });
 }
 
-
-
-
-
 // обработчик клика по кнопке выбора велосипедов mobile
 bicyclesButton.addEventListener('click', () => {
   openItem();
@@ -390,12 +379,6 @@ bicyclesButton.addEventListener('click', () => {
     linkMobileHandler(el);
   });
 });
-
-
-
-
-
-
 
 searchArray(initialBicyclesRoad);
 
@@ -424,10 +407,6 @@ lightSwitcherFooterButton.addEventListener('click', () => {
 lightSwitcherHeaderButton.addEventListener('click', () => {
   switchThemeLight();
 });
-
-
-
-
 
 anchors.forEach(function(item) {
   // каждому якорю присваиваем обработчик события

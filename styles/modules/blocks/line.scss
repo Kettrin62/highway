@@ -5,10 +5,6 @@
 @media all and (max-width: 740px) {
   .line {
     display: block;
-    // @include wh($w: 100%, $h: 20px);
-    // min-height: 20px;
-    // border-top: 1px $lineMobileColor solid;
-    // box-sizing: border-box;
     width: 100%;
     border: 1px $lineMobileColor solid;
     @include mp();
