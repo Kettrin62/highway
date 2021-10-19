@@ -920,6 +920,7 @@ template {
   background-position: center;
   padding: 12px 34px 12px 16px;
   box-sizing: border-box;
+  background-size: cover;
 }
 .swiper__button-prev {
   left: 0;
@@ -1061,6 +1062,11 @@ template {
   }
 }
 @media all and (max-width: 610px) {
+  .swiper__icon {
+    width: 70px;
+    height: 28px;
+    padding: 8px 24px 8px 11px;
+  }
   .swiper__button-prev {
     right: 37px;
   }

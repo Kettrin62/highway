@@ -28,6 +28,7 @@
     background-position: center;
     padding: 12px 34px 12px 16px;
     box-sizing: border-box;
+    background-size: cover;
   }
 
   &__button-prev {
@@ -201,6 +202,12 @@
 
 @media all and (max-width: 610px) {
   .swiper {
+    &__icon {
+      @include wh(70px, 28px);
+      padding: 8px 24px 8px 11px;
+      
+    }
+
     &__button-prev {
       right: 37px;
     }
