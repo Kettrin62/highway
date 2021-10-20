@@ -834,7 +834,7 @@ template {
   color: #e5e5e5;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 840px) {
   .merks__quote {
     font-size: 23px;
     line-height: 126%;
@@ -1259,8 +1259,11 @@ template {
     height: 30px;
     text-align: left;
   }
+  .bicycles__link:hover {
+    opacity: 0.6;
+  }
   .bicycles__link_active {
-    opacity: 1;
+    opacity: 0.75;
     font-weight: 600;
   }
   .bicycles__list {

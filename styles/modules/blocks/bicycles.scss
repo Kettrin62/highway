@@ -179,8 +179,12 @@
       height: 30px;
       text-align: left;
 
+      &:hover {
+        opacity: .6;
+      }
+
       &_active {
-        opacity: 1;
+        opacity: .75;
         font-weight: 600;
       }
     }
